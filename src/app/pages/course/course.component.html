@@ -1,0 +1,214 @@
+<div class="container-fluid my-3 position-relative">
+    <section class="courses-section">
+        <!-- Section Title -->
+        <div class="text-center mb-5 position-relative">
+            <!-- Decorative Icons -->
+            <i class="bi bi-stars text-warning fs-1 position-absolute top-0 start-0 translate-middle"></i>
+            <i class="bi bi-magic text-danger fs-1 position-absolute top-0 end-0 translate-middle"></i>
+          
+            <!-- Section Title -->
+            <h2 class="display-4 fw-bold text-gradient text-uppercase position-relative d-inline-block">
+              <i class="bi bi-bookmark-star-fill text-danger me-2"></i>
+              Explore Our Courses
+            </h2>
+          
+            <!-- Animated Underline -->
+            <div class="underline mt-2 mx-auto"></div>
+          
+            <!-- Description -->
+            <p class="lead text-dark mt-3">
+              We offer <span class="fw-bold text-warning">specialized courses</span> tailored to different academic streams. Whether you're building a
+              foundation, preparing for <span class="text-danger fw-bold">medical school</span>, or aiming for <span class="text-warning fw-bold">engineering excellence</span>,
+              we have the right course for you.
+            </p>
+          </div>
+          
+          <!-- Custom CSS -->
+          <style>
+            /* Gradient Text */
+            .text-gradient {
+              background: linear-gradient(90deg, #ff512f, #f09819);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          
+            /* Animated Underline */
+            .underline {
+              width: 120px;
+              height: 5px;
+              background: #ff512f;
+              border-radius: 50px;
+              animation: pulse 2s infinite;
+            }
+          
+            /* Bounce Animation */
+            @keyframes pulse {
+              0% {
+                transform: scaleX(1);
+              }
+              50% {
+                transform: scaleX(1.5);
+              }
+              100% {
+                transform: scaleX(1);
+              }
+            }
+          </style>
+          
+
+        <!-- Background Wave / DNA Effect -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: -1; overflow: hidden; opacity: 0.15;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color: white; stop-opacity: 1" />
+                        <stop offset="50%" style="stop-color: orange; stop-opacity: 0.5" />
+                        <stop offset="100%" style="stop-color: white; stop-opacity: 1" />
+                    </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#gradient)" />
+                <!-- DNA illustration -->
+                <path fill="transparent" stroke="orange" stroke-width="4"
+                    d="M100,300 C200,100, 400,100, 500,300 C600,500, 700,500, 800,300" />
+                <path fill="transparent" stroke="orange" stroke-width="2"
+                    d="M100,400 C200,600, 400,600, 500,400 C600,200, 700,200, 800,400" />
+            </svg>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="row g-4 position-relative">
+            <!-- Foundation Courses -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-lg border-0 position-relative overflow-hidden">
+                    <!-- Abstract Background Design -->
+                    <div class="position-absolute top-0 start-0 w-100 h-100">
+                        <div class="position-absolute start-100 translate-middle-x"
+                            style="width: 220px; height: 80px; background: linear-gradient(to right, blue, transparent); border-radius: 50px;">
+                        </div>
+                        <div class="position-absolute rounded-circle m-5"
+                            style="width: 100px; height: 100px; background: rgba(0, 0, 255, 0.2);"></div>
+                    </div>
+                    <div class="card-body text-center position-relative">
+                        <div class="icon-box mb-4">
+                            <i class="bi bi-book fs-1 text-primary"></i>
+                        </div>
+                        <h3 class="card-title fw-bold text-primary">Foundation (Class 7-10)</h3>
+                        <p class="card-text text-muted">
+                            Build a strong academic base with our structured curriculum for students in classes 7 to 10.
+                        </p>
+                        <ul class="list-unstyled text-start ms-4">
+                            <li class="rounded-pill bg-primary bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> Mathematics</li>
+                            <li class="rounded-pill bg-primary bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> Science</li>
+                            <li class="rounded-pill bg-primary bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> English</li>
+                            <li class="rounded-pill bg-primary bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> Social Studies</li>
+                        </ul>
+                        <div class="text-center mt-3">
+                            <button class="btn btn-primary m-2">Class 7</button>
+                            <button class="btn btn-primary m-2">Class 8</button>
+                            <button class="btn btn-primary m-2">Class 9</button>
+                            <button class="btn btn-primary m-2">Class 10</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medical Courses -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-lg border-3 border-danger position-relative overflow-hidden">
+                    <div class="position-absolute top-0 start-0 w-100 h-100">
+                        <div class="position-absolute start-100 translate-middle-x"
+                            style="width: 220px; height: 80px; background: linear-gradient(to right, red, transparent); border-radius: 50px;">
+                        </div>
+                        <div class="position-absolute rounded-circle m-5"
+                            style="width: 100px; height: 100px; background: rgba(255, 0, 0, 0.2);"></div>
+                    </div>
+                    <div class="card-body text-center position-relative">
+                        <div class="icon-box mb-4">
+                            <i class="bi bi-heart-pulse fs-1 text-danger"></i>
+                        </div>
+                        <h3 class="card-title fw-bold text-danger">Medical (Class 11-12)</h3>
+                        <p class="card-text text-muted">
+                            Specialized coaching for medical entrance exams like NEET, focusing on Biology, Chemistry,
+                            and Physics.
+                        </p>
+                        <ul class="list-unstyled text-start ms-4">
+                            <li class="rounded-pill bg-danger bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> Biology</li>
+                            <li class="rounded-pill bg-danger bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> Physics</li>
+                            <li class="rounded-pill bg-danger bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> Chemistry</li>
+                            <li class="rounded-pill bg-danger bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> NEET Preparation</li>
+                        </ul>
+                        <div class="text-center mt-3">
+                            <button class="btn btn-danger m-2">Class 11</button>
+                            <button class="btn btn-danger m-2">Class 12</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Engineering Courses -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-lg border-3 border-warning position-relative overflow-hidden">
+                    <!-- Abstract Background Design -->
+                    <div class="position-absolute top-0 start-0 w-100 h-100">
+
+                        <div class="position-absolute start-100 translate-middle-x"
+                            style="width: 220px; height: 80px; background: linear-gradient(to right, orange, transparent); border-radius: 50px;">
+                        </div>
+                        <div class="position-absolute rounded-circle m-5"
+                            style="width: 100px; height: 100px; background: rgba(255, 165, 0, 0.2);"></div>
+                    </div>
+
+                    <div class="card-body text-center position-relative">
+                        <div class="icon-box mb-4">
+                            <i class="bi bi-gear fs-1 text-warning"></i>
+                        </div>
+
+                        <h3 class="card-title fw-bold text-warning">Engineering (Class 11-12)</h3>
+
+                        <p class="card-text text-muted">
+                            Prepare for engineering entrance exams like JEE with our rigorous courses covering:
+                        </p>
+
+                        <ul class="list-unstyled text-start ms-4">
+                            <li class="rounded-pill bg-warning bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> Mathematics</li>
+                            <li class="rounded-pill bg-warning bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> Physics</li>
+                            <li class="rounded-pill bg-warning bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> Chemistry</li>
+                            <li class="rounded-pill bg-warning bg-opacity-25 m-2 p-2"><i
+                                    class="bi bi-check-circle-fill text-success me-2"></i> JEE Preparation</li>
+                        </ul>
+
+                        <div class="text-center mt-3">
+                            <button class="btn btn-warning m-2">Class 11</button>
+                            <button class="btn btn-warning m-2">Class 12</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Enroll Now Section -->
+    <section class="py-5 text-center container-fluid text-white"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/1600x900/?education,learning') center/cover no-repeat;">
+        <div class="container">
+            <h2 class="fw-bold text-uppercase">Take the First Step</h2>
+            <p class="lead mb-4">Secure your seat today or get free guidance from experts.</p>
+
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="btn btn-lg btn-warning fw-bold px-4 shadow">📞 Get Free Counseling</a>
+
+            </div>
+        </div>
+    </section>
+</div>

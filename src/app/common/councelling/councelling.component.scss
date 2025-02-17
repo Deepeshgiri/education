@@ -1,0 +1,60 @@
+.scene {
+    width: 200px; /* Bigger cube */
+    height: 200px;
+    perspective: 800px; /* Deeper 3D effect */
+}
+
+/* Cube Container */
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 10s infinite linear; /* Faster & smoother */
+}
+
+/* Cube Faces */
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, orange, darkorange);
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.6);
+}
+
+/* Face Positions */
+.front  { transform: translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* Rotation Animation */
+@keyframes rotate {
+    0% { transform: rotateX(0) rotateY(0); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* Hover Pause Effect */
+.scene:hover .cube {
+    animation-play-state: paused;
+}
+
+ 
+.slide {
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  }
+  
+  .slide.show {
+    transform: translateX(0);
+    opacity: 1;
+  }

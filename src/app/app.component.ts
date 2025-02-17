@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from "./navbar/navbar.component";
+import { FooterComponent } from './layout/footer/footer.component';
+import { FallingBackgroundDirective } from './falling-background.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavbarComponent,FooterComponent, FallingBackgroundDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'education';
+
 }
