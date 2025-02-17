@@ -17,8 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-           
-            "outputPath": "docs",
+            "outputPath": "dist/education",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -46,7 +45,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1500kB",
+                  "maximumWarning": "500kB",
                   "maximumError": "1MB"
                 },
                 {
@@ -108,5 +107,3 @@
     "analytics": false
   }
 }
-
-
