@@ -1,4 +1,5 @@
 
+
     /* Primary: Mandarin Jelly */
     $primary-100: #FFFCF2;
     $primary-200: #FFEAB6;
@@ -33,12 +34,12 @@
     $neutral-900: #262422;
     
 
-
     body, html {
       
       }
       
       .falling-element {
+        font-family: 'Poppins', sans-serif !important;
         position: absolute;
         top: -50px;
         background-color: orange;
@@ -62,3 +63,74 @@
         font-family: Arial, sans-serif;
       }
       
+
+
+      
+
+
+
+
+
+
+      
+
+h4 {
+  color: #ff6600;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  color: #444;
+  font-style: italic;
+  position: relative;
+  padding: 15px;
+}
+
+
+.underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff9800, #ff5722);
+  border-radius: 2px;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+h2 {
+  animation: fadeInDown 1s ease-in-out;
+}
+
+p {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

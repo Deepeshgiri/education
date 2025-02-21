@@ -6,11 +6,18 @@ import { FallingBackgroundDirective } from './falling-background.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent,FooterComponent, FallingBackgroundDirective],
+  imports: [RouterOutlet, NavbarComponent,FooterComponent, ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'education';
+
+
+  isContactMenuOpen = false;
+
+toggleContactMenu() {
+  this.isContactMenuOpen = !this.isContactMenuOpen;
+}
 
 }

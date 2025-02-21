@@ -1,5 +1,6 @@
 <div class="homepage-container">
 
+
   <!-- ✅ Hero Section (Bootstrap Carousel) -->
   <section id="hero-section" class="w-100 mt-3 rounded-1">
     <div class="container-fluid">
@@ -33,73 +34,95 @@
 
 
 
+
   <!-- ✅ Card Carousel Section -->
   <section id="card-carousel-section" class="p-3">
-    <div class="container-fluid">
-      <h2 class="text-center">Our Shining Stars</h2>
-      <p class="text-center">All the Students are from ClassRoom Programme!</p>
+    <div class="container-fluid text-center">
+      <h2 class="fs-1 text-decoration-underline" style="color: #1f0000;">Our Shining Stars</h2>
+      <p class="lead">All the Students are from Classroom Programme!</p>
     </div>
-    <div class="container-fluid">
-      <div class="row justify-content-between align-items-center">
-        <button class="rounded-pill col-12 col-md-auto " (click)="prevCard(); stopAutoSlide()"><span
-            class="material-icons mt-1">keyboard_arrow_left</span></button>
 
-        <div class="col-12 col-md-8">
-          <div class="row d-flex justify-content-center flex-nowrap">
-            <div class="card border border-primary rounded col-12 col-sm-6 col-md-4 col-lg-3 m-2 text-center"
-              *ngFor="let card of visibleCards">
-              <img [src]="card.src" class="card-img-top mt-2 border border-warning img-fluid " alt="Image">
-              <div class="card-body">
-                <p class="card-text">
-                  {{ card.text }} Lorem ipsum dolor sit amet consectetur adipisicing elit.
+<div class="d-flex justify-content-center align-items-center ">
+  <span class="material-icons nextbtn" (click)="prevCard(); stopAutoSlide()" >keyboard_arrow_left</span>
+
+  <div class="row  justify-content-center align-items-center">
+
+
+    <div class="col-12 d-flex col-md-8 justify-content-center align-items-center">
+
+
+      <div class="row d-flex justify-content-center flex-nowrap">
+        <div class="card  col-12 col-sm-6 col-md-4 col-lg-3 m-2 text-center"
+          *ngFor="let card of visibleCards" style="color: brown; background: none; border: 0;">
+          
+          <img [src]="card.src ? card.src : '/assets/images/chashmish.png'"
+            class="card-img-top mt-2 border border-warning shadow img-fluid rounded-circle m-auto border-4" style="max-height: 200px;max-width: 200px; " alt="Student Image" > 
+            <img src="/assets/images/award1.png" class="img-fluid position-absolute mt-3 ms-3 " style="width: 80px;" alt="Ribbon">
+            <div class="card-body position-relative text-center">
+              <div class="position-relative d-inline-block">
+                <img src="/assets/images/banner1.png" class="img-fluid" alt="Ribbon">
+                <p class="position-absolute top-50 start-50 translate-middle text-brown fw-bold">
+                  {{ card.text }}
                 </p>
-                <h3>Topper Jee</h3>
               </div>
+            
+              <h3 class=" mt-3 rounded" style="background-color: #1f0000; color: #f80;">Topper Jee</h3>
             </div>
-          </div>
+            
         </div>
-
-        <button class="rounded-pill col-12 col-md-auto align-items-center justify-content-center"
-          (click)="nextCard(); stopAutoSlide()"><span class="material-icons mt-1">keyboard_arrow_right</span></button>
       </div>
-    </div>
-  </section>
+      <!-- Right Button (Small and Round) -->
 
-  <hr />
-  <div class="container-fluid">
-    <div class="row text-center">
+    </div>
+
+
+
+
+  </div>
+  <span class="material-icons nextbtn" (click)="nextCard(); stopAutoSlide()">keyboard_arrow_right</span>
+
+</div>
+    
+
+  </section>
+<!-- cuboid -->
+
+
+ 
+  <div class="container-fluid milestone-section animated-div">
+    <div class="row text-center align-items-center justify-content-center animated-div">
       <!-- Milestone 1 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="p-4 border rounded shadow">
-          <span class="material-icons fs-1">school</span>
-          <h3 class="mt-2 milestone_counter" data-end-value="1548">1548</h3>
+      <div class="col-lg-3 col-md-6 ">
+        <div class="p-4  rounded animated-div" style="background: none;" >
+          <span class="material-icons fs-1" style="color: brown;" >school</span>
+          <h3 class="mt-2 milestone_counter " data-end-value="1548">1548</h3>
           <p class="fw-bold">Online Courses</p>
         </div>
       </div>
 
       <!-- Milestone 2 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="p-4 border rounded shadow">
-          <span class="material-icons fs-1">people</span>
-          <h3 class="mt-2 milestone_counter" data-end-value="7286">7286</h3>
+      <div class="col-lg-3 col-md-6 ">
+        <div class="p-4 ">
+          <span class="material-icons fs-1" style="color: brown;" >people</span>
+          <h3 class="mt-2 milestone_counter " data-end-value="7286">7286</h3>
           <p class="fw-bold">Students</p>
         </div>
       </div>
 
       <!-- Milestone 3 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="p-4 border rounded shadow">
-          <span class="material-icons fs-1">person</span>
-          <h3 class="mt-2 milestone_counter" data-end-value="257">257</h3>
+      <div class="col-lg-3 col-md-6 ">
+        <div class="p-4  ">
+          <span class="material-icons fs-1" style="color: brown;" >person</span>
+          <h3 class="mt-2 milestone_counter  " data-end-value="257">257</h3>
           <p class="fw-bold">Teachers</p>
         </div>
       </div>
 
       <!-- Milestone 4 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="p-4 border rounded shadow">
-          <span class="material-icons fs-1">public</span>
-          <h3 class="mt-2 milestone_counter" data-end-value="39">39</h3>
+      <div class="col-lg-3 col-md-6 ">
+        <div class="p-4 ">
+          <span class="material-icons fs-1" style="color: brown;">public</span>
+          <h3 class="mt-2 milestone_counter " data-end-value="39">39</h3>
           <p class="fw-bold">Countries</p>
         </div>
       </div>
@@ -108,8 +131,9 @@
 
 
 
-  <section class="team-section py-5 ">
-    <div class="container">
+
+  <section class="team-section py-5">
+    <div class="container-fluid">
       <!-- Section Title -->
       <div class="row">
         <div class="col-12 text-center">
@@ -120,143 +144,240 @@
           </p>
         </div>
       </div>
-
+  
       <!-- Team Members -->
       <div class="row justify-content-center mt-4">
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let director of directors">
-          <div class="card shadow border-0">
-            <img [src]="director.image" class="card-img-top rounded-top" [alt]="director.name">
-            <div class="card-body text-center">
-              <h4 class="card-title">{{ director.name }}</h4>
-              <h6 class="text-primary">{{ director.role }}</h6>
+        <div class="col-lg-6 col-md-8 col-sm-12 mb-4 " *ngFor="let director of directors">
+          <div class="shadow rounded-4 border-0 animated-div p-2 d-flex align-items-center">
+            
+            <!-- Left Side: Image + Role -->
+            <div class="col-4 d-flex flex-column align-items-center">
+              <img [src]="director.image" class="img-fluid rounded-4" [alt]="director.name" style="max-height: 150px; width: auto;">
+              <h6 class="text-primary mt-2">{{ director.role }}</h6>
+            </div>
+            
+            <!-- Right Side: Name + Description -->
+            <div class="col-8 ps-3">
+              <h5 class="card-title text-decoration-underline">{{ director.name }}</h5>
               <p class="card-text text-muted">{{ director.qualification }}</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <section class="our-features section py-5 container-fluid" >
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 text-center mb-4">
+          <h2 class="fw-bold">
+            Our <span class="text-warning">Features</span>
+          </h2>
+          <p class="text-muted">
+            Discover why Pinnacle Educare is the best choice for your academic journey.  
+          </p>
+          <div class="d-flex justify-content-center">
+            <div class="underline"></div>
+          </div>
+        </div>
+      </div>
+      
+  
+      <div class="row w-100 "  >
+        <div class="col-md-2 col-6 mb-4" *ngFor="let feature of features">
+          <div class="card border-0 justify-content-center align-items-center" style="background: none;">
+            <div class="card-img-top d-flex justify-content-center align-items-center ">
+              <img [src]="feature.image" class="rounded-circle w-50" alt="{{ feature.title }}">
+
+            </div>
+            <div class="card-body text-center  rounded-4" style=" color: #f80;" >
+              <h5 class="card-title rounded-4"  >{{ feature.title }}</h5>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
 
 
 
+  <section class="our-features section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="section-title text-center">
+            <h2>Our <span>Features</span></h2>
+            <p>Features why students should choose Pinnacle Educare.</p>
+          </div>
+        </div>
+      </div>
+  
+      <div id="featureCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div
+            *ngFor="let feature of features; let i = index"
+            class="carousel-item"
+            [ngClass]="{ 'active': i === 0 }"
+          >
+            <div class="row justify-content-center">
+              <div class="col-md-4 text-center">
+                <div class="single-feature">
+                  <div class="feature-head">
+                    <img [src]="feature.image" class="img-fluid" alt="{{ feature.title }}" />
+                  </div>
+                  <h2>{{ feature.title }}</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#featureCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#featureCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+  
 
-
-
+  <section class="team-section py-5">
+    <div class="container-fluid">
+      <!-- Section Title -->
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="fw-bold">Our Awesome <span class="text-primary">Directors</span></h2>
+          <p class="text-muted">
+            Pinnacle Educare houses some of the finest educators with extraordinary pedagogy. With academic and
+            industrial exposure, they have the power to transform education in India.
+          </p>
+        </div>
+      </div>
+  
+      <!-- Team Members -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-6 col-md-8 col-sm-12 mb-4"  *ngFor="let director of directors">
+          <div class="shadow rounded-4 p-2 d-flex align-items-center custom-card" style="background: none;">
+            
+            <!-- Left Side: Image + Role -->
+            <div class="col-5 d-flex flex-column align-items-center">
+              <img [src]="director.image" class="img-fluid rounded-4" [alt]="director.name" style="max-height: 150px; width: auto; ">
+              <p class="text-primary mt-2">{{ director.role }}</p>
+  
+            
+            </div>
+            
+            <!-- Right Side: Name + Description -->
+            <div class="col-7 ps-3">
+              <h5 class="card-title text-decoration-underline" style="color: #1f0000;">{{ director.name }}</h5>
+              <p class="card-text text-muted" style="font-style: italic;">{{ director.qualification }}</p>
+              <p class="card-text">{{ director.description }}</p>
+                <!-- Social Icons (Bootstrap Icons) -->
+                <div class="social-icons d-flex justify-content-center align-items-center mt-2">
+                  <a *ngIf="director.twitter" [href]="director.twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+                  <a *ngIf="director.linkedin" [href]="director.linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a *ngIf="director.youtube" [href]="director.youtube" target="_blank"><i class="bi bi-youtube"></i></a>
+                  <a *ngIf="director.facebook" [href]="director.facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a *ngIf="director.instagram" [href]="director.instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <hr />
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-  <div class="container my-5">
-    <div class="row">
+  <div class="container-fluid my-5">
+    <div class="row g-4">
+      <!-- Student Testimonials -->
       <div class="col-md-6">
         <div class="section-title text-center mb-4">
-          <h2>Student's <span>Testimonials</span></h2>
+          <h2>Student's <span class="text-warning">Testimonials</span></h2>
         </div>
-        <!-- Student Testimonials Carousel -->
-        <div id="studentCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <!-- Testimonial 1 -->
-            <div class="carousel-item active">
-              <div class="testimonials">
-                <div class="single-testimonial">
-                  <img src="https://www.pinnacloeducare.com/ishpreet.PNG" alt="Ishatpreet">
-                  <h4>Ishatpreet</h4>
-                  <p>Pinnacle provides a right way to success. All the teachers of Pinnacle are very supportive. They
-                    helped me in setting my goals and time. They showed me the mirror of guidance to help me for
-                    reaching Pinnacle. Whatever I have achieved today, it is merely because of teamwork by the faculty
-                    members and the efforts they put on me to reach the steps of success. In my opinion, no institute
-                    can handle me better than Pinnacle Educare.</p>
+        <div class="card rounded-4 p-5">
+          <div id="studentCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div
+                *ngFor="let student of testimonials.students; let i = index"
+                class="carousel-item"
+                [class.active]="i === 0"
+              >
+                <div class="card shadow-lg border-0 text-center p-4">
+                  <img [src]="student.image" [alt]="student.name" class="rounded-circle mx-auto d-block" width="80">
+                  <div class="card-body">
+                    <h5 class="card-title text-warning">{{ student.name }}</h5>
+                    <p class="card-text">
+                      <i class="bi bi-quote text-warning fs-3"></i>
+                      {{ student.message }}
+                      <i class="bi bi-quote text-warning fs-3"></i>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-            <!-- Testimonial 2 -->
-            <div class="carousel-item">
-              <div class="testimonials">
-                <div class="single-testimonial">
-                  <img src="https://www.pinnacloeducare.com/yadwinder.JPG" alt="Yadwinder Singh">
-                  <h4>Yadwinder Singh</h4>
-                  <p>My experience here was great. I am fully satisfied with the Pinnacle System. All the faculty
-                    members have great experience of producing awesome results. The best unique feature of Pinnacle is
-                    the infinite doubt sessions. It does not matter how many times you ask the same question, they will
-                    always be there for you. CBT test and topic-wise test analysis have helped me a lot. Thank you a
-                    lot, Pinnacle Educare.</p>
-                </div>
-              </div>
-            </div>
-            <!-- Add more testimonials as needed -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#studentCarousel" data-bs-slide="prev">
+              <i class="bi bi-chevron-left text-primary fs-3"></i>
+            </button>
+            <button class="carousel-control-next btn btn-primary" type="button" data-bs-target="#studentCarousel" data-bs-slide="next">
+              <i class="bi bi-chevron-right text-primary fs-3"></i>
+  
+            </button>
           </div>
-          <!-- Carousel Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#studentCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#studentCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
       </div>
+  
+      <!-- Parent Testimonials -->
       <div class="col-md-6">
         <div class="section-title text-center mb-4">
-          <h2>Parent's <span>Testimonials</span></h2>
+          <h2>Parent's <span class="text-warning">Testimonials</span></h2>
         </div>
-        <!-- Parent Testimonials Carousel -->
+       <div class="card rounded-4 p-5">
         <div id="parentCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <!-- Testimonial 1 -->
-            <div class="carousel-item active">
-              <div class="testimonials">
-                <div class="single-testimonial">
-                  <img src="https://www.pinnacloeducare.com/uploads/testimonials/reetarani.JPG" alt="Reeta Rani">
-                  <h4>Reeta Rani</h4>
-                  <p>My daughter Hitakshi is a student of Pinnacle Educare in the medical stream. As parents, we are
-                    highly satisfied with the hard work and teaching methodology of the Pinnacle faculty. This institute
-                    is not meant for business like others, but the only aim of Pinnacle is to provide the students with
-                    a bright and successful future. May God bless Pinnacle Institute with the best results.</p>
+            <div
+              *ngFor="let parent of testimonials.parents; let i = index"
+              class="carousel-item"
+              [class.active]="i === 0"
+            >
+              <div class="card shadow-lg border-0 text-center p-4">
+                <img [src]="parent.image" [alt]="parent.name" class="rounded-circle mx-auto d-block" width="80">
+                <div class="card-body">
+                  <h5 class="card-title text-warning">{{ parent.name }}</h5>
+                  <p class="card-text">
+                    <i class="bi bi-quote text-warning fs-3"></i>
+                    {{ parent.message }}
+                    <i class="bi bi-quote text-warning fs-3"></i>
+                  </p>
                 </div>
               </div>
             </div>
-            <!-- Testimonial 2 -->
-            <div class="carousel-item">
-              <div class="testimonials">
-                <div class="single-testimonial">
-                  <img src="https://www.pinnacloeducare.com/uploads/testimonials/kuldeep%20Singh.PNG"
-                    alt="Kuldeep Singh">
-                  <h4>Kuldeep Singh</h4>
-                  <p>My daughter is in touch with Pinnacle Educare since its establishment. The dedicated and diligent
-                    team at Pinnacle has come up with great results in Sangrur within a short time span. The team
-                    focuses on quality education, and the results achieved proved it all. Energetic and laborious
-                    faculty provided great concept building and unlimited doubt clearance as it says "Dream it, Do it".
-                    I believe Pinnacle Educare is an ideal choice for all those who want to accomplish their dreams.</p>
-                </div>
-              </div>
-            </div>
-            <!-- Add more testimonials as needed -->
           </div>
-          <!-- Carousel Controls -->
           <button class="carousel-control-prev" type="button" data-bs-target="#parentCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <i class="bi bi-chevron-left text-primary fs-3"></i>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#parentCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <i class="bi bi-chevron-right text-primary fs-3"></i>
           </button>
         </div>
+       </div>
       </div>
     </div>
   </div>
-
+  
+  
 
 </div>

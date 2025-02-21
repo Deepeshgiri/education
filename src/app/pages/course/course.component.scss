@@ -48,21 +48,10 @@
     transition: all 0.3s ease;
   }
   
-  .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
+ 
+
   
-  .btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
-  }
-  
-  .btn-warning {
-    background-color: #ffc107;
-    border-color: #ffc107;
-    color: #000;
-  }
+ 
   
   .btn:hover {
     opacity: 0.9;
@@ -81,4 +70,13 @@
     100% {
         transform: rotate(360deg);
     }
+}
+
+
+.scolor{
+  background-color: #f80;
+}
+
+.pcolor{
+  background-color: #1f0000;
 }

@@ -1,77 +1,83 @@
 <header class="top-navbar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
-      <div class="container-fluid">
-        <!-- Navbar Brand -->
-        <a class="navbar-brand" routerLink="/">
-          <img src="./assets/images/logo.jpg" alt="Logo" class="img-fluid" style="max-height: 40px;">
-        </a>
-  
-        <!-- Navbar Toggler for Mobile -->
-        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="material-icons">sort</span> <!-- Material Icon -->
-        </button>
-  
-        <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              <a class="nav-link" routerLink="/">Home</a>
-            </li>
-  
-            <!-- Dropdown Menu for Courses -->
-            <li class="nav-item dropdown first" routerLinkActive="active">
-              <a class="nav-link dropdown-toggle dropdown-item" id="courseDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/course">
-                Course <span class="dropdown-arrow">&#9660;</span> 
-              </a>
-              <ul class="dropdown-menu second" id="courseDropdown" >
-                <li class="dropdown-submenu">
-                  <a class="dropdown-toggle dropdown-item"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Foundation
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="courseeDropdown">
-                    
-                    <li><a class="dropdown-item"routerLink="/course/foundation/seven">Seven</a></li>
-                    <li><a class="dropdown-item" routerLink="/course/foundation/eight">Eight barrel</a></li>
-                    <li><a class="dropdown-item" routerLink="/course/foundation/nine">Nine</a></li>
-                    <li><a class="dropdown-item" routerLink="/course/foundation/ten">Ten</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle">
-                    Medical
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink="/course/medical/eleven">med Eleven</a></li>
-                    <li><a class="dropdown-item" routerLink=" /course/medical/twelve">Med Twelve</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle">
-                    Enginnering
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink="/course/engineering/eleven">eng Eleven</a></li>
-                    <li><a class="dropdown-item" routerLink="/course/engineering/twelve">engg Twelve</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-  
-            <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" routerLink="/contact">Contact</a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" routerLink="/exam">Exam</a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" routerLink="/admission">Admission</a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" routerLink="/about">About Us</a>
-            </li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <!-- Navbar Brand -->
+      <a class="navbar-brand" routerLink="/">
+        <img src="./assets/images/logo.jpg" alt="Logo" class="img-fluid" style="max-height: 40px;">
+      </a>
+
+      <!-- Navbar Toggler for Mobile -->
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="material-icons">sort</span> <!-- Material Icon -->
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse border border-light" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-divider "></li>
+
+          <!-- Dropdown Menu for Courses -->
+          <li class="nav-item dropdown first" routerLinkActive="active">
+            <a class="nav-link dropdown-toggle" id="courseDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Course <span class="dropdown-arrow">&#9660;</span> 
+            </a>
+
+            <ul class="dropdown-menu second rounded-3 p-1">
+              <li class="dropdown-submenu">
+                <a class="dropdown-toggle dropdown-item" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Foundation
+                </a>
+                <ul class="dropdown-menu rounded-3 p-0">
+                  <li><a class="dropdown-item" routerLink="/course/foundation/seven">Seven</a></li>
+                  <li><a class="dropdown-item" routerLink="/course/foundation/eight">Eight</a></li>
+                  <li><a class="dropdown-item" routerLink="/course/foundation/nine">Nine</a></li>
+                  <li><a class="dropdown-item" routerLink="/course/foundation/ten">Ten</a></li>
+                </ul>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle">
+                  Medical
+                </a>
+                <ul class="dropdown-menu rounded-3 p-1">
+                  <li><a class="dropdown-item" routerLink="/course/medical/eleven">Medical Eleven</a></li>
+                  <li><a class="dropdown-item" routerLink="/course/medical/twelve">Medical Twelve</a></li>
+                </ul>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle">
+                  Engineering
+                </a>
+                <ul class="dropdown-menu rounded-3 p-1">
+                  <li><a class="dropdown-item" routerLink="/course/engineering/eleven">Engineering Eleven</a></li>
+                  <li><a class="dropdown-item" routerLink="/course/engineering/twelve">Engineering Twelve</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-divider"></li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/contact">Contact</a>
+          </li>
+          <li class="nav-divider"></li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/exam">Exam</a>
+          </li>
+          <li class="nav-divider"></li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admission">Admission</a>
+          </li>
+          <li class="nav-divider"></li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/about">About Us</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-  </header>
-  
+    </div>
+  </nav>
+</header>

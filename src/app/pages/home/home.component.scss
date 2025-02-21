@@ -1,85 +1,186 @@
-@import '../../../styles.scss';
-
-
-
-
-  
-
 .homepage-container {
-    width: 100%;
-    margin: auto;
-    
-  }
+  width: 100%;
+  margin: auto;
 
-  .section-title h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-  }
-  .section-title h2 span {
-    color: #007bff;
-  }
-  .testimonials {
-    background: #f8f9fa;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .testimonials:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  }
-  .single-testimonial {
-    text-align: center;
-  }
-  .single-testimonial img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    border: 4px solid #007bff;
-    transition: transform 0.3s ease;
-  }
-  .single-testimonial img:hover {
-    transform: scale(1.1);
-  }
-  .single-testimonial h4 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #007bff;
-  }
-  .single-testimonial p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-  }
-  .carousel-control-prev, .carousel-control-next {
-    width: 5%;
-    color: #007bff;
-  }
-  .carousel-control-prev:hover, .carousel-control-next:hover {
-    color: #0056b3;
-  }
-  .carousel-indicators [data-bs-target] {
-    background-color: #007bff;
-  }
-  .carousel-indicators .active {
-    background-color: #0056b3;
-  }
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-title h2 span {
+  color: #007bff;
+}
 
 
 
+.testimonials:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.nextbtn {
+  background-color: brown;
+  z-index: 33;
+  font-weight: 800;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
 
 
 
-  .team-section {
-    .card {
-      transition: transform 0.3s ease-in-out;
-      
-      &:hover {
-        transform: translateY(-5px);
-      }
-    }
+.animated-div {
+  background: linear-gradient(to right, #ff8000c4, #ffcc00ad, rgba(255, 136, 0, 0.274));
+  background-size: 200% 100%;  
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;  
+ 
+}
+
+@keyframes moveColor {
+  0% {
+    background-position: 200% 50%;
   }
-  
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Hover Effect on Card */
+.custom-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: none;
+}
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Media Icons */
+.social-icons a {
+  font-size: 20px;
+  margin: 0 5px;
+  color: #555;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  transform: scale(1.4);
+}
+
+/* Social Icon Colors */
+.bi-twitter { color: #1DA1F2; }
+.bi-linkedin { color: #0077B5; }
+.bi-youtube { color: #FF0000; }
+.bi-facebook { color: #1877F2; }
+.bi-instagram { color: #E4405F; }
+
+
+
+
+
+
+
+
+
+.underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff9800, #ff5722);
+  border-radius: 2px;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+h2 {
+  animation: fadeInDown 1s ease-in-out;
+}
+
+p {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+.section-title h2 {
+  font-weight: bold;
+  color: #ff6600;
+  text-transform: uppercase;
+  span {
+    color: #000;
+  }
+}
+
+
+
+
+h4 {
+  color: #ff6600;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  color: #444;
+  font-style: italic;
+  position: relative;
+  padding: 15px;
+}
+
+.quote-icon-top,
+.quote-icon-bottom {
+  font-size: 34px;
+  color: #ff6600;
+  position: absolute;
+}
+
+.quote-icon-top {
+  top: -10px;
+  left: -10px;
+}
+
+.quote-icon-bottom {
+  bottom: -10px;
+  right: -10px;
+  rotate: 180deg;
+}
+ .carousel{
+  background: none;
+ }

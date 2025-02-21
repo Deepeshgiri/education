@@ -1,50 +1,114 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener ,AfterViewInit, ElementRef} from '@angular/core';
+import player from 'lottie-web'
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  
 })
 export class HomeComponent implements OnInit {
-
   directors = [
     {
       name: 'Rishabh Garg',
       role: 'HOD Mathematics',
       qualification: 'B.Tech, IIT Roorkee',
-      image: 'https://www.pinnacloeducare.com/uploads/teachers/rishabh-garg.png'
+      description: 'Passionate about problem-solving and mentoring students to achieve excellence in Mathematics.',
+      image: 'https://www.pinnacloeducare.com/uploads/teachers/rishabh-garg.png',
+      twitter: 'https://twitter.com/rishabhgarg',
+      linkedin: 'https://linkedin.com/in/rishabhgarg',
+      youtube: 'https://youtube.com/c/RishabhGargMaths',
+      facebook: 'https://facebook.com/rishabhgarg',
+      instagram: 'https://instagram.com/rishabhgarg'
     },
     {
       name: 'Romy Garg',
       role: 'HOD Chemistry',
       qualification: 'M.Tech. ICT Mumbai',
-      image: 'https://www.pinnacloeducare.com/uploads/teachers/romy-garg.png'
+      description: 'Dedicated to making Chemistry intuitive and engaging for students aspiring for competitive exams.',
+      image: 'https://www.pinnacloeducare.com/uploads/teachers/romy-garg.png',
+      twitter: 'https://twitter.com/romygarg',
+      linkedin: 'https://linkedin.com/in/romygarg',
+      youtube: 'https://youtube.com/c/RomyGargChemistry',
+      facebook: 'https://facebook.com/romygarg',
+      instagram: 'https://instagram.com/romygarg'
     },
     {
       name: 'Novel Jindal',
       role: 'HOD Physics',
-      qualification: 'B. Tech, IIT Roorkee',
-      image: 'https://www.pinnacloeducare.com/uploads/teachers/novel-jindal.png'
+      qualification: 'B.Tech, IIT Roorkee',
+      description: 'Physics enthusiast with a knack for simplifying complex concepts and fostering critical thinking.',
+      image: 'https://www.pinnacloeducare.com/uploads/teachers/novel-jindal.png',
+      twitter: 'https://twitter.com/noveljindal',
+      linkedin: 'https://linkedin.com/in/noveljindal',
+      youtube: 'https://youtube.com/c/NovelJindalPhysics',
+      facebook: 'https://facebook.com/noveljindal',
+      instagram: 'https://instagram.com/noveljindal'
     }
   ];
-
-
+  
+  features = [
+    { title: 'Motivational & Counselling Sessions', image: 'https://www.pinnacloeducare.com/uploads/features/motivation.PNG' },
+    { title: 'Performance Analysis & Report', image: 'https://www.pinnacloeducare.com/uploads/features/performance analaysis.PNG' },
+    { title: 'Lecture Recording Lab', image: 'https://www.pinnacloeducare.com/uploads/features/lecture recording.PNG' },
+    { title: 'Objective + Subjective', image: 'https://www.pinnacloeducare.com/uploads/features/objective subjective.PNG' },
+    { title: 'Smart AC Classrooms', image: 'https://www.pinnacloeducare.com/uploads/features/acclassroom.PNG' },
+    { title: 'IITIAN Doctor Faculty', image: 'https://www.pinnacloeducare.com/uploads/features/doctor.PNG' },
+    { title: 'Unlimited Doubt Session', image: 'https://www.pinnacloeducare.com/uploads/features/doubt.PNG' },
+    { title: 'Extra Support to Weaker Students', image: 'https://www.pinnacloeducare.com/uploads/features/extra support.PNG' },
+    { title: 'CCTV Campus', image: 'https://www.pinnacloeducare.com/uploads/features/cctv.PNG' },
+    { title: 'Pre-Planned Coursework & Planner', image: 'https://www.pinnacloeducare.com/uploads/features/preplanned.PNG' },
+    { title: 'Biometric Attendance', image: 'https://www.pinnacloeducare.com/uploads/features/biometric.PNG' },
+    { title: 'Revision Classes & Self Study Zone', image: 'https://www.pinnacloeducare.com/uploads/features/revision classes.PNG' }
+  ];
 
 
   images = [
-    { src: 'assets/images/hero/image-1.png', text: 'Card 1 description' },
-    { src: 'assets/images/hero/image-2.png', text: 'Card 2 description' },
-    { src: 'assets/images/hero/image-3.png', text: 'Card 3 description' },
-    { src: 'assets/images/hero/image-4.png', text: 'Card 4 description' },
-    { src: 'assets/images/hero/image-5.png', text: 'Card 5 description' },
-    { src: 'assets/images/hero/image-6.png', text: 'Card 6 description' },
-    { src: 'assets/images/hero/image-7.png', text: 'Card 7 description' },
-    { src: 'assets/images/hero/image-8.png', text: 'Card 8 description' }
+    { src: 'assets/images/toppers/aashi.jpg', text: 'Deepesh kumar description' },
+    { src: 'assets/images/toppers/himanshi.jpg', text: 'Card 2 description' },
+    { src: 'assets/images/toppers/priya.jpg', text: 'Card 3 description' },
+    { src: 'assets/images/toppers/prachi.jpg', text: 'Card 4 description' },
+    { src: 'assets/images/toppers/aashi.jpg', text: 'Card 5 description' },
+    { src: 'assets/images/toppers/priya.jpg', text: 'Card 6 description' },
+    { src: 'assets/images/toppers/prachi.jpg', text: 'Card 7 description' },
+    { src: 'assets/images/toppers/himanshi.jpg', text: 'Card 8 description' }
   ];
 
+
+  testimonials = {
+    students: [
+      {
+        name: 'Ishatpreet',
+        image: 'https://www.pinnacloeducare.com/ishpreet.PNG',
+        message:
+          'Pinnacle provides a right way to success. All the teachers of Pinnacle are very supportive. They helped me in setting my goals and time. They showed me the mirror of guidance to help me for reaching Pinnacle.',
+      },
+      {
+        name: 'Yadwinder Singh',
+        image: 'https://www.pinnacloeducare.com/yadwinder.JPG',
+        message:
+          'My experience here was great. I am fully satisfied with the Pinnacle System. All the faculty members have great experience of producing awesome results.',
+      },
+    ],
+    parents: [
+      {
+        name: 'Reeta Rani',
+        image: 'https://www.pinnacloeducare.com/uploads/testimonials/reetarani.JPG',
+        message:
+          'My daughter Hitakshi is a student of Pinnacle Educare in the medical stream. As parents, we are highly satisfied with the hard work and teaching methodology of the Pinnacle faculty.',
+      },
+      {
+        name: 'Kuldeep Singh',
+        image: 'https://www.pinnacloeducare.com/uploads/testimonials/kuldeep%20Singh.PNG',
+        message:
+          'My daughter is in touch with Pinnacle Educare since its establishment. The dedicated and diligent team at Pinnacle has come up with great results in Sangrur within a short time span. The team focuses on quality education.',
+      },
+    ],
+  };
+  
   visibleCards: any[] = [];
   startIndex = 0;
   autoSlideInterval: any;
@@ -103,4 +167,8 @@ export class HomeComponent implements OnInit {
   stopAutoSlide(): void {
     clearInterval(this.autoSlideInterval);
   }
+
+
+  
+
 }
