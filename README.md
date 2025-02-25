@@ -1,3 +1,6 @@
+
+https://deepeshgiri.github.io/education/ 
+
 # Education
 
 //"outputPath": "dist/education",
