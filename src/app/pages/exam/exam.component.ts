@@ -12,11 +12,7 @@ import AOS from 'aos';
 export class ExamComponent implements OnInit {
 
   ngOnInit() {
-    AOS.init({
-      duration: 1000,  
-      once: true,  // Ensures animations trigger only once for better UX
-      mirror: false // Prevents animations from replaying when scrolling back up
-    });
+  
   }
 
   readonly syllabusList = [

@@ -24,7 +24,8 @@ toggleContactMenu() {
 ngOnInit(): void {
   
   Aos.init({
-    duration: 1000, // Animation duration in milliseconds
+    offset: 50,
+    duration: 900, // Animation duration in milliseconds
     easing: 'ease-in-out', // Easing effect
     once: false, // Run animation only once
     mirror:true

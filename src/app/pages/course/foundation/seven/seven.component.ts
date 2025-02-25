@@ -11,11 +11,7 @@ import AOS from 'aos';
 export class SevenComponent {
 
   ngOnInit() {
-    AOS.init({
-      duration: 1000,
-      once: false,
-      mirror: true
-    });
+ 
   }
 
   courseTitle = "Master Class 7 with Expert Guidance";
