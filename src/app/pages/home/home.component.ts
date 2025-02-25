@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, HostListener ,AfterViewInit, ElementRef} from '@angular/core';
-import player from 'lottie-web'
+import Aos from 'aos';
+
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,12 @@ import player from 'lottie-web'
   
 })
 export class HomeComponent implements OnInit {
+
+
+
+
+
+  
   directors = [
     {
       name: 'Rishabh Garg',
@@ -108,19 +115,33 @@ export class HomeComponent implements OnInit {
       },
     ],
   };
+
+
+  ngOnInit(): void {
+    this.setVisibleCards();
+    this.autoSlideInterval = setInterval(() => this.nextCard(), 2000);
+  }
+
+  ngAfterViewInit(): void {
+    Aos.init({
+      duration: 600,
+      once: false,
+      mirror: true
+    }); 
+    Aos.refresh(); // ✅ Refresh animations after initialization
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.autoSlideInterval); // ✅ Prevent memory leaks
+  }
+
+
   
   visibleCards: any[] = [];
   startIndex = 0;
   autoSlideInterval: any;
   cardsPerPage = 5; // Default cards per page
 
-  ngOnInit(): void {
-    // Show first set of images based on screen size
-    this.setVisibleCards();
-    
-    // Start auto-sliding every 2 seconds
-    this.autoSlideInterval = setInterval(() => this.nextCard(), 2000);
-  }
 
   // Adjust the number of visible cards based on screen size
   @HostListener('window:resize', ['$event'])

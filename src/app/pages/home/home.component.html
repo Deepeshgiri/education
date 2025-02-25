@@ -38,7 +38,7 @@
   <!-- ✅ Card Carousel Section -->
   <section id="card-carousel-section" class="p-3">
     <div class="container-fluid text-center">
-      <h2 class="fs-1 text-decoration-underline" style="color: #1f0000;">Our Shining Stars</h2>
+      <h2 class="fs-1 text-decoration-underline text-primary fw-bold" >Our Shining Stars</h2>
       <p class="lead">All the Students are from Classroom Programme!</p>
     </div>
 
@@ -118,63 +118,20 @@
         </div>
       </div>
 
-      <!-- Milestone 4 -->
-      <div class="col-lg-3 col-md-6 ">
-        <div class="p-4 ">
-          <span class="material-icons fs-1" style="color: brown;">public</span>
-          <h3 class="mt-2 milestone_counter " data-end-value="39">39</h3>
-          <p class="fw-bold">Countries</p>
-        </div>
-      </div>
+   
     </div>
   </div>
 
 
 
 
-  <section class="team-section py-5">
-    <div class="container-fluid">
-      <!-- Section Title -->
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="fw-bold">Our Awesome <span class="text-primary">Directors</span></h2>
-          <p class="text-muted">
-            Pinnacle Educare houses some of the finest educators with extraordinary pedagogy. With academic and
-            industrial exposure, they have the power to transform education in India.
-          </p>
-        </div>
-      </div>
-  
-      <!-- Team Members -->
-      <div class="row justify-content-center mt-4">
-        <div class="col-lg-6 col-md-8 col-sm-12 mb-4 " *ngFor="let director of directors">
-          <div class="shadow rounded-4 border-0 animated-div p-2 d-flex align-items-center">
-            
-            <!-- Left Side: Image + Role -->
-            <div class="col-4 d-flex flex-column align-items-center">
-              <img [src]="director.image" class="img-fluid rounded-4" [alt]="director.name" style="max-height: 150px; width: auto;">
-              <h6 class="text-primary mt-2">{{ director.role }}</h6>
-            </div>
-            
-            <!-- Right Side: Name + Description -->
-            <div class="col-8 ps-3">
-              <h5 class="card-title text-decoration-underline">{{ director.name }}</h5>
-              <p class="card-text text-muted">{{ director.qualification }}</p>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </section>
   
   <section class="our-features section py-5 container-fluid" >
     <div class="container-fluid">
-      <div class="row">
+      <div class="row" data-bs-slide-to="left">
         <div class="col-12 text-center mb-4">
           <h2 class="fw-bold">
-            Our <span class="text-warning">Features</span>
+            Our <span class="text-primary">Features</span>
           </h2>
           <p class="text-muted">
             Discover why Pinnacle Educare is the best choice for your academic journey.  
@@ -187,9 +144,9 @@
       
   
       <div class="row w-100 "  >
-        <div class="col-md-2 col-6 mb-4" *ngFor="let feature of features">
+        <div class="col-md-2 col-6 mb-4" *ngFor="let feature of features" data-aos="slide-left" >
           <div class="card border-0 justify-content-center align-items-center" style="background: none;">
-            <div class="card-img-top d-flex justify-content-center align-items-center ">
+            <div class="card-img-top d-flex justify-content-center align-items-center "   >
               <img [src]="feature.image" class="rounded-circle w-50" alt="{{ feature.title }}">
 
             </div>
@@ -205,54 +162,13 @@
 
 
 
-  <section class="our-features section">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="section-title text-center">
-            <h2>Our <span>Features</span></h2>
-            <p>Features why students should choose Pinnacle Educare.</p>
-          </div>
-        </div>
-      </div>
-  
-      <div id="featureCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div
-            *ngFor="let feature of features; let i = index"
-            class="carousel-item"
-            [ngClass]="{ 'active': i === 0 }"
-          >
-            <div class="row justify-content-center">
-              <div class="col-md-4 text-center">
-                <div class="single-feature">
-                  <div class="feature-head">
-                    <img [src]="feature.image" class="img-fluid" alt="{{ feature.title }}" />
-                  </div>
-                  <h2>{{ feature.title }}</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#featureCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#featureCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
-  </section>
   
 
   <section class="team-section py-5">
     <div class="container-fluid">
       <!-- Section Title -->
       <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center ">
           <h2 class="fw-bold">Our Awesome <span class="text-primary">Directors</span></h2>
           <p class="text-muted">
             Pinnacle Educare houses some of the finest educators with extraordinary pedagogy. With academic and
@@ -262,23 +178,23 @@
       </div>
   
       <!-- Team Members -->
-      <div class="row justify-content-center mt-4">
-        <div class="col-lg-6 col-md-8 col-sm-12 mb-4"  *ngFor="let director of directors">
-          <div class="shadow rounded-4 p-2 d-flex align-items-center custom-card" style="background: none;">
+      <div class="row justify-content-center mt-4" >
+        <div class="col-lg-6 col-md-8 col-sm-12 mb-4"  style="overflow: hidden;"  *ngFor="let director of directors">
+          <div class="card rounded-4 p-2 d-flex align-items-center custom-card"  >
             
             <!-- Left Side: Image + Role -->
-            <div class="col-5 d-flex flex-column align-items-center">
-              <img [src]="director.image" class="img-fluid rounded-4" [alt]="director.name" style="max-height: 150px; width: auto; ">
+            <div class="col-5 d-flex flex-column align-items-center" data-aos="slide-right"   >
+              <img [src]="director.image" class="img-fluid rounded-2" [alt]="director.name" style="max-height: 150px; width: auto; ">
               <p class="text-primary mt-2">{{ director.role }}</p>
   
             
             </div>
             
             <!-- Right Side: Name + Description -->
-            <div class="col-7 ps-3">
-              <h5 class="card-title text-decoration-underline" style="color: #1f0000;">{{ director.name }}</h5>
-              <p class="card-text text-muted" style="font-style: italic;">{{ director.qualification }}</p>
-              <p class="card-text">{{ director.description }}</p>
+            <div class="col-7 ps-3" data-aos="slide-left">
+              <h5 class="card-title text-decoration-underline fw-bold" style="color: #1f0000;">{{ director.name }}</h5>
+              <p class="card-text p-0 text-danger " style="font-style: italic;">{{ director.qualification }}</p>
+              <p class="card-text p-0">{{ director.description }}</p>
                 <!-- Social Icons (Bootstrap Icons) -->
                 <div class="social-icons d-flex justify-content-center align-items-center mt-2">
                   <a *ngIf="director.twitter" [href]="director.twitter" target="_blank"><i class="bi bi-twitter"></i></a>
@@ -308,7 +224,7 @@
         <div class="section-title text-center mb-4">
           <h2>Student's <span class="text-warning">Testimonials</span></h2>
         </div>
-        <div class="card rounded-4 p-5">
+        <div class="testimonial-container position-relative">
           <div id="studentCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div
@@ -316,7 +232,7 @@
                 class="carousel-item"
                 [class.active]="i === 0"
               >
-                <div class="card shadow-lg border-0 text-center p-4">
+                <div class="card shadow-lg border-0 text-center p-4 rounded-4">
                   <img [src]="student.image" [alt]="student.name" class="rounded-circle mx-auto d-block" width="80">
                   <div class="card-body">
                     <h5 class="card-title text-warning">{{ student.name }}</h5>
@@ -329,12 +245,13 @@
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#studentCarousel" data-bs-slide="prev">
+            
+            <!-- Custom Next & Prev Buttons -->
+            <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#studentCarousel" data-bs-slide="prev">
               <i class="bi bi-chevron-left text-primary fs-3"></i>
             </button>
-            <button class="carousel-control-next btn btn-primary" type="button" data-bs-target="#studentCarousel" data-bs-slide="next">
+            <button class="carousel-control-next custom-next" type="button" data-bs-target="#studentCarousel" data-bs-slide="next">
               <i class="bi bi-chevron-right text-primary fs-3"></i>
-  
             </button>
           </div>
         </div>
@@ -343,40 +260,43 @@
       <!-- Parent Testimonials -->
       <div class="col-md-6">
         <div class="section-title text-center mb-4">
-          <h2>Parent's <span class="text-warning">Testimonials</span></h2>
+          <h2>Parent's <span class="text-danger">Testimonials</span></h2>
         </div>
-       <div class="card rounded-4 p-5">
-        <div id="parentCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div
-              *ngFor="let parent of testimonials.parents; let i = index"
-              class="carousel-item"
-              [class.active]="i === 0"
-            >
-              <div class="card shadow-lg border-0 text-center p-4">
-                <img [src]="parent.image" [alt]="parent.name" class="rounded-circle mx-auto d-block" width="80">
-                <div class="card-body">
-                  <h5 class="card-title text-warning">{{ parent.name }}</h5>
-                  <p class="card-text">
-                    <i class="bi bi-quote text-warning fs-3"></i>
-                    {{ parent.message }}
-                    <i class="bi bi-quote text-warning fs-3"></i>
-                  </p>
+        <div class="testimonial-container position-relative">
+          <div id="parentCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div
+                *ngFor="let parent of testimonials.parents; let i = index"
+                class="carousel-item"
+                [class.active]="i === 0"
+              >
+                <div class="card shadow-lg border-0 text-center p-4 rounded-4">
+                  <img [src]="parent.image" [alt]="parent.name" class="rounded-circle mx-auto d-block" width="80">
+                  <div class="card-body">
+                    <h5 class="card-title text-danger">{{ parent.name }}</h5>
+                    <p class="card-text">
+                      <i class="bi bi-quote text-warning fs-3"></i>
+                      {{ parent.message }}
+                      <i class="bi bi-quote text-warning fs-3"></i>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+  
+            <!-- Custom Next & Prev Buttons -->
+            <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#parentCarousel" data-bs-slide="prev">
+              <i class="bi bi-chevron-left text-danger fs-3"></i>
+            </button>
+            <button class="carousel-control-next custom-next" type="button" data-bs-target="#parentCarousel" data-bs-slide="next">
+              <i class="bi bi-chevron-right text-danger fs-3"></i>
+            </button>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#parentCarousel" data-bs-slide="prev">
-            <i class="bi bi-chevron-left text-primary fs-3"></i>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#parentCarousel" data-bs-slide="next">
-            <i class="bi bi-chevron-right text-primary fs-3"></i>
-          </button>
         </div>
-       </div>
       </div>
     </div>
   </div>
+  
   
   
 

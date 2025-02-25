@@ -1,87 +1,150 @@
-<div class="container-fluid py-5" *ngIf="contactForm">
-    <div class="contact-bottom" *ngIf="contactForm" [@formAnimation]>
-      <div class="row text-center">
-        <!-- Location -->
-        <div class="col-lg-4 col-md-4 col-12">
-          <div class="contact-info p-4 shadow-sm bg-light rounded">
-            <div class="icon mb-3">
-              <i class="fa fa-map fa-3x text-primary"></i>
-            </div>
-            <h3 class="fw-bold">Location</h3>
-            <p>Pinnacle Educare, Opp. Kidzee School, Guru Nanak Colony, Sangrur</p>
-          </div>
-        </div>
-  
-        <!-- Email -->
-        <div class="col-lg-4 col-md-4 col-12">
-          <div class="contact-info p-4 shadow-sm bg-light rounded">
-            <div class="icon mb-3">
-              <i class="fa fa-envelope fa-3x text-danger"></i>
-            </div>
-            <h3 class="fw-bold">Email Address</h3>
-            <a href="mailto:novel.pinnacle@gmail.com" class="d-block">novel.pinnacle"&#64;"gmail.com</a>
-            <a href="mailto:educare.pinnacle@gmail.com">educare.pinnacle"&#64;"gmail.com</a>
-          </div>
-        </div>
-  
-        <!-- Phone -->
-        <div class="col-lg-4 col-md-4 col-12">
-          <div class="contact-info p-4 shadow-sm bg-light rounded">
-            <div class="icon mb-3">
-              <i class="fa fa-phone fa-3x text-success"></i>
-            </div>
-            <h3 class="fw-bold">Get in Touch</h3>
-            <p>+91-9815355955</p>
-          </div>
-        </div>
+<section>
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center" data-aos="fade-up">
+        <h2 class="display-4 fw-bold mb-4">
+          Why <span class="text-primary">Contact Us ?</span>
+        </h2>
+        <p class="lead text-muted">
+          Pinnacle is dedicated to providing exceptional education. Here's how we can assist you:
+        </p>
       </div>
     </div>
   
-    <!-- Map & Contact Form -->
-    <div class="row mt-5">
-      <!-- Google Map -->
-      <div class="col-md-8">
-        <div class="shadow-sm rounded overflow-hidden">
-          <iframe class="w-100" height="450" frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed?pb=..."></iframe>
-        </div>
+    <div class="row container-fluid justify-content-center mt-4">
+      <div class="col-md-7">
+        <ul class="list-unstyled">
+          <li class="d-flex align-items-center mb-3" data-aos="fade-right">
+            <i class="bi bi-bookmark-check-fill text-primary me-4 fs-1"></i>
+            <div>
+              <strong class="d-block">Detailed Course Information</strong>
+              <span class="text-muted">Explore our curriculum, schedules, and learning resources.</span>
+            </div>
+          </li>
+          <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-delay="100">
+            <i class="bi bi-lightbulb-fill text-warning me-4 fs-1"></i>
+            <div>
+              <strong class="d-block">Expert Guidance</strong>
+              <span class="text-muted">Get personalized advice from our experienced team.</span>
+            </div>
+          </li>
+          <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-delay="200">
+            <i class="bi bi-people-fill text-success me-4 fs-1"></i>
+            <div>
+              <strong class="d-block">Collaboration Opportunities</strong>
+              <span class="text-muted">Partner with us to expand educational access in your community.</span>
+            </div>
+          </li>
+          <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-delay="300">
+            <i class="bi bi-wrench-adjustable-circle-fill text-danger me-4 fs-1"></i>
+            <div>
+              <strong class="d-block">Technical Support</strong>
+              <span class="text-muted">We're here to resolve any technical issues you encounter.</span>
+            </div>
+          </li>
+          <li class="d-flex align-items-center" data-aos="fade-right" data-aos-delay="400">
+            <i class="bi bi-chat-heart-fill text-info me-4 fs-1"></i>
+            <div>
+              <strong class="d-block">Feedback & Suggestions</strong>
+              <span class="text-muted">Your input helps us continuously improve our services.</span>
+            </div>
+          </li>
+        </ul>
       </div>
-  
-      <!-- Contact Form -->
-      <div class="col-md-4" *ngIf="contactForm" [@formAnimation]>
+
+      <div class="col-md-5  " data-aos="fade-left">
         <div class="card shadow-sm">
-          <div class="card-body">
-            <h4 class="fw-bold text-center">Have a Query?</h4>
+          <div class="card-body text-primary ">
+            <h4 class="fw-bold text-center ">Have a Query?</h4>
             <form (ngSubmit)="onSubmit()">
-              <div class="mb-3" [@inputAnimation]>
-                <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
-                <input type="text" id="name" [(ngModel)]="contactForm.name" name="name" class="form-control"
-                  pattern="^[a-zA-Z]+([\s][a-zA-Z]+)*$" required>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" [(ngModel)]="contactForm.name" name="name" class="form-control" required>
               </div>
-  
-              <div class="mb-3" [@inputAnimation]>
-                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-                <input type="email" id="email" [(ngModel)]="contactForm.email" name="email"
-                  class="form-control" required>
+      
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" [(ngModel)]="contactForm.email" name="email" class="form-control" required>
               </div>
-  
-              <div class="mb-3" [@inputAnimation]>
-                <label for="phone" class="form-label">Mobile <span class="text-danger">*</span></label>
-                <input type="text" id="phone" [(ngModel)]="contactForm.phone" name="phone"
-                  class="form-control" pattern="^[0-9]{10}$" required>
+      
+              <div class="mb-3">
+                <label for="phone" class="form-label">Mobile</label>
+                <input type="text" id="phone" [(ngModel)]="contactForm.phone" name="phone" class="form-control" required>
               </div>
-  
-              <div class="mb-3" [@inputAnimation]>
-                <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
-                <textarea id="message" [(ngModel)]="contactForm.message" name="message"
-                  class="form-control" rows="3" required></textarea>
+      
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" [(ngModel)]="contactForm.message" name="message" class="form-control" rows="3" required></textarea>
               </div>
-  
+      
               <button type="submit" class="btn btn-primary w-100">Submit</button>
             </form>
           </div>
         </div>
       </div>
     </div>
+ <!-- Contact Form -->
+
   </div>
+
+
+  <div class="row justify-content-center mt-0">
+    <div class="col-lg-8 text-center" data-aos="fade-up">
+      <p class="lead text-muted">
+        We're committed to providing prompt and helpful responses. Contact us today to achieve your educational goals.
+      </p>
+    </div>
+  </div>
+
+<div class="container py-1" data-aos="fade-up">
+  <div class="row text-center mb-0 p-3">
+    <!-- Location -->
+    <div class="col-lg-4 col-md-6 ">
+      <div class="contact-info p-4  rounded" data-aos="zoom-in">
+        <i class="bi bi-geo-alt-fill text-warning display-4"></i>
+        <h4 class="fw-bold mt-3">Location</h4>
+        <p>Pinnacle Educare, Opp. Kidzee School, Guru Nanak Colony, Sangrur</p>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="col-lg-4 col-md-6 ">
+      <div class="contact-info p-4  rounded" data-aos="zoom-in">
+        <i class="bi bi-envelope-fill text-warning display-4"></i>
+        <h4 class="fw-bold mt-3">Email Address</h4>
+        <a href="mailto:novel.pinnacle@gmail.com" class="d-block text-dark">novel.pinnacle&#64;gmail.com</a>
+        <a href="mailto:educare.pinnacle@gmail.com" class="text-dark">educare.pinnacle&#64;gmail.com</a>
+      </div>
+    </div>
+
+    <!-- Phone -->
+    <div class="col-lg-4 col-md-6 ">
+      <div class="contact-info p-4  rounded" data-aos="zoom-in">
+        <i class="bi bi-telephone-fill text-warning display-4"></i>
+        <h4 class="fw-bold mt-3">Get in Touch</h4>
+        <p>+91-9815355955</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Google Map -->
+    <div class="col-md-12 mb-4" data-aos="fade-right">
+      <div class="shadow-sm rounded overflow-hidden">
+        <iframe class="w-100 rounded" height="450" frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed?pb=...">
+        </iframe>
+      </div>
+    </div>
+
+   
+  </div>
+</div>
+
+
+
+
+
   
+</section>

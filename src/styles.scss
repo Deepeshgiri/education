@@ -1,4 +1,17 @@
 
+:root {
+  --bs-primary: #1f0000 !important;
+  --bs-primary-rgb: 31, 0, 0 !important; /* Equivalent RGB */
+  --bs-secondary:#f80;
+
+}
+
+$bg-primary: #1f0000; 
+$primary: #1f0000; 
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
 
     /* Primary: Mandarin Jelly */
     $primary-100: #FFFCF2;

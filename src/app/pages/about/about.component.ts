@@ -5,10 +5,9 @@ import { Component } from '@angular/core';
   selector: 'app-about',
   imports: [CommonModule],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-
   features = [
     {
       title: 'Experienced Faculty',
@@ -41,6 +40,32 @@ export class AboutComponent {
       icon: 'emoji_events' // Material Icon
     }
   ];
-  
 
+  visionText = `Pinnacle, standing for the "Ultimate Height", is a group of zealous, vibrant, and erudite IITians and professionals. 
+  We mix fundamental teaching ideologies with scientific and technological methods to enhance student learning. 
+  Our approach goes beyond education—it creates experiences that translate into deeper learning.`;
+
+  valuesAndVisionText = `Founded by three engineers, Pinnacle Educare was established in 2017 with a mission to enhance student learning. 
+  Our goal is to nurture students for the competitive world and help them secure seats in India’s most prestigious institutions.`;
+
+  commitments = [
+    { icon: 'access_time', text: 'Teaching students to develop respect for time and their surroundings.' },
+    { icon: 'lightbulb', text: 'Helping students realize their true potential.' },
+    { icon: 'build', text: 'Equipping them with tools to explore new dimensions of the world.' }
+  ];
+
+  competitiveExamText = `Pinnacle takes the lead in mentoring and training students for India's most competitive examinations, 
+  including IIT-JEE, BITSAT, NEET, KVPY, and Olympiads.`;
+
+  aimsAndResponsibilitiesText = `Pinnacle is different from the traditional **cram-and-spit** style of tutoring. 
+  We focus on **real-world education**, training young minds responsibly. 
+  At Pinnacle, we don’t just produce results—we provide a **holistic experience** that transforms students into responsible professionals and individuals.`;
+
+  aims = [
+    { icon: 'check_circle', text: 'Learns honesty towards himself.' },
+    { icon: 'lightbulb', text: 'Discovers his true self.' },
+    { icon: 'psychology', text: 'Learns to handle tough situations smartly.' },
+    { icon: 'calculate', text: 'Develops strong aptitude for core subjects (Maths, Physics, Chemistry, Biology).' },
+    { icon: 'construction', text: 'Invents tools to apply his knowledge.' }
+  ];
 }

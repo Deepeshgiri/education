@@ -1,44 +1,25 @@
+.text-primary {
+  color: #1f0000 !important;
+}
+
+.text-danger {
+  color: #f80 !important;
+}
+
+$primary: #1f0000;
+$danger: #f80;
+
 .homepage-container {
   width: 100%;
   margin: auto;
-
 }
-
-.section-title h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.section-title h2 span {
-  color: #007bff;
-}
-
-
-
-.testimonials:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.nextbtn {
-  background-color: brown;
-  z-index: 33;
-  font-weight: 800;
-  border-radius: 50%;
-  cursor: pointer;
-
-}
-
-
 
 .animated-div {
   background: linear-gradient(to right, #ff8000c4, #ffcc00ad, rgba(255, 136, 0, 0.274));
-  background-size: 200% 100%;  
+  background-size: 200% 100%;
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;  
- 
+  color: white;
 }
 
 @keyframes moveColor {
@@ -50,11 +31,9 @@
   }
 }
 
-
 /* Hover Effect on Card */
 .custom-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: none;
 }
 .custom-card:hover {
   transform: translateY(-5px);
@@ -79,89 +58,11 @@
 .bi-facebook { color: #1877F2; }
 .bi-instagram { color: #E4405F; }
 
-
-
-
-
-
-
-
-
 .underline {
   width: 80px;
   height: 4px;
   background: linear-gradient(90deg, #ff9800, #ff5722);
   border-radius: 2px;
-  animation: slideIn 1s ease-in-out;
-}
-
-@keyframes slideIn {
-  from {
-    width: 0;
-  }
-  to {
-    width: 80px;
-  }
-}
-
-h2 {
-  animation: fadeInDown 1s ease-in-out;
-}
-
-p {
-  animation: fadeInUp 1s ease-in-out;
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-
-
-
-.section-title h2 {
-  font-weight: bold;
-  color: #ff6600;
-  text-transform: uppercase;
-  span {
-    color: #000;
-  }
-}
-
-
-
-
-h4 {
-  color: #ff6600;
-  font-weight: bold;
-}
-
-p {
-  font-size: 16px;
-  color: #444;
-  font-style: italic;
-  position: relative;
-  padding: 15px;
 }
 
 .quote-icon-top,
@@ -181,6 +82,3 @@ p {
   right: -10px;
   rotate: 180deg;
 }
- .carousel{
-  background: none;
- }
