@@ -11,5 +11,17 @@ import { RouterModule } from '@angular/router'; // ✅ Import RouterModule
 })
 
 export class NavbarComponent {
+  openSubmenus: { [key: string]: boolean } = {}; // Track submenu states
+
+  toggleSubmenu(event: Event, submenu: string) {
+    event.preventDefault(); // Prevent default anchor behavior
+    event.stopPropagation(); // Stop event from bubbling up
+
+    // Toggle submenu state
+    this.openSubmenus[submenu] = !this.openSubmenus[submenu];
+  }
+
+
+  
 
 }

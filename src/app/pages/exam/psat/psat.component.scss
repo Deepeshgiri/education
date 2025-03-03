@@ -1,0 +1,69 @@
+.text-primary {
+    color: #1f0000 !important; 
+}
+
+
+
+
+  .syllabus-card {
+   
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.2);
+     
+    }
+  
+  
+    .btn {
+      border-radius: 20px;
+    }
+  }
+  
+
+
+
+  /* Custom CSS for specific design elements */
+.ptqe_syllabus_section .ptqe_sp_box.dark {
+    border: 1px solid #f4cf9e;
+}
+
+.ptqe_syllabus_section .ptqe_sp_box.light {
+    border: 1px solid #b84f53;
+}
+
+.ptqe_syllabus_section .ptqe_sp_box.dark .ptqe_sp_inner {
+    background: #b84f53;
+    color: #fff;
+}
+
+.ptqe_syllabus_section .ptqe_sp_box.light .ptqe_sp_inner {
+    background: #f4cf9e;
+    color: #000;
+}
+
+
+
+.ptqe_syllabus_section .smp_box .desc_box a.sub {
+    color: #b84f53;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+
+/* Make button smaller on mobile */
+@media (max-width: 576px) {
+    .register-btn {
+        padding: 2px 10px;
+        font-size: 0.8rem; /* Reduce size */
+    }
+}
+
+
+
+section{
+    overflow: hidden;
+}

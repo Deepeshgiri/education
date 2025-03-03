@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component,OnInit, } from '@angular/core';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +8,13 @@ import { Component } from '@angular/core';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit {
+
+  ngOnInit(){
+    AOS.init();
+    AOS.refreshHard();
+  }
+
   features = [
     {
       title: 'Experienced Faculty',

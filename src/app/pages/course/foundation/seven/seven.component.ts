@@ -11,7 +11,8 @@ import AOS from 'aos';
 export class SevenComponent {
 
   ngOnInit() {
- 
+ AOS.refresh();
+ AOS.init();
   }
 
   courseTitle = "Master Class 7 with Expert Guidance";

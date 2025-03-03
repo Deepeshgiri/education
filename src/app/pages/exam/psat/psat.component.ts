@@ -1,22 +1,25 @@
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AfterViewInit, Component,OnInit } from '@angular/core';
 import AOS from 'aos';
 
 @Component({
-  selector: 'app-exam',
-  standalone: true,
+  selector: 'app-psat',
   imports: [CommonModule],
-  templateUrl: './exam.component.html',
-  styleUrls: ['./exam.component.scss'] // Fixed `styleUrl` to `styleUrls`
+  templateUrl: './psat.component.html',
+  styleUrl: './psat.component.scss'
 })
-export class ExamComponent implements OnInit {
+
+export class PsatComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
-    AOS.init();
+    
     AOS.refreshHard();
   
   }
-
+ngAfterViewInit(): void {
+ 
+  
+}
   readonly syllabusList = [
     { class: 'VI', syllabusUrl: 'https://www.pinnacloeducare.com/images/ptqe-2024/6th_PTQE_Syllabus.pdf' },
     { class: 'VII', syllabusUrl: 'https://www.pinnacloeducare.com/images/ptqe-2024/7th_PTQE_Syllabus.pdf' },

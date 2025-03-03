@@ -11,11 +11,13 @@
 </div>
 
 <!-- Course Features Section -->
-<section class="container bg-light py-5">
-  <h2 class="text-center mb-4 text-danger fw-bold display-5" data-aos="fade-up">🚀 What You'll Get</h2>
-  <div class="row text-center g-4">
+
+
+<section class="container-fluid bg-light py-5">
+  <h2 class="text-center mb-4 text-primary fw-bold display-5" data-aos="fade-up"> What You'll Get</h2>
+  <div class="row text-center g-5 m-2">
     <div class="col-md-4" *ngFor="let feature of courseFeatures; let i = index" data-aos="zoom-in" [attr.data-aos-delay]="i * 100">
-      <div class="card h-100 border-0 shadow-sm p-4">
+      <div class="card h-100 border-3 rounded-5 shadow-sm p-4">
         <i class="material-icons text-{{ feature.color }} display-4 mb-3">{{ feature.icon }}</i>
         <h4 class="fw-bold mb-3 text-{{ feature.color }}">{{ feature.title }}</h4>
         <p class="text-muted">{{ feature.description }}</p>
@@ -31,9 +33,9 @@
 </div>
 
 <!-- Demo Lectures Section -->
-<section class="container my-5">
+<section class="container-fluids bg-light my-5">
   <h2 class="text-center mb-4 display-5 fw-bold">🎥 Watch Demo Lectures</h2>
-  <div class="row g-4">
+  <div class="row g-5 ms-5 me-5 ">
     <div class="col-md-6">
       <div class="demo-video ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
         <iframe src="https://www.youtube.com/embed/ndJznszTTLY?si=Qpmsi31Lwj9ZJJOR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -54,13 +56,17 @@
 
 <!-- Key Highlights Section -->
 <section class="py-5 bg-light">
+
+  <h2 class="fw-bold text-center text-uppercase mb-4 display-5">Why Choose This Course?</h2>
+
+
   <div class="container">
+
     <div class="row align-items-center g-4">
       <div class="col-lg-6" data-aos="fade-right">
         <img src="./assets/images/why1.jpg" class="img-fluid rounded-4 shadow-lg" alt="Course Highlights">
       </div>
       <div class="col-lg-6" data-aos="fade-left">
-        <h2 class="fw-bold text-uppercase mb-4 display-5">Why Choose This Course?</h2>
         <div class="card border-0 shadow-lg p-4">
           <ul class="list-group list-group-flush">
             <li class="list-group-item d-flex align-items-center border-0 py-3 highlight-hover" data-aos="fade-up" *ngFor="let highlight of highlights">

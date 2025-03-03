@@ -1,37 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from './layout/footer/footer.component';
-import { FallingBackgroundDirective } from './falling-background.directive';
 import Aos from 'aos';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent,FooterComponent, ],
+  standalone: true,
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'education';
-
-
+export class AppComponent implements OnInit, AfterViewInit {
+  title = 'Pinnacloeducare';
   isContactMenuOpen = false;
 
-toggleContactMenu() {
-  this.isContactMenuOpen = !this.isContactMenuOpen;
-}
+  constructor(private router: Router) {} 
 
-ngOnInit(): void {
-  
-  Aos.init({
-    offset: 50,
-    duration: 900, // Animation duration in milliseconds
-    easing: 'ease-in-out', // Easing effect
-    once: false, // Run animation only once
-    mirror:true
-  });
-  Aos.refresh();
-}
+  toggleContactMenu() {
+    this.isContactMenuOpen = !this.isContactMenuOpen;
+  }
 
+  ngAfterViewInit() {
+    Aos.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: false,
+      mirror: true
+    });
+  }
 
+  ngOnInit(): void {
+    Aos.init();
+    Aos.refresh();
+    
+    // ✅ Reset scroll on route change
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+        Aos.refreshHard();
+      }
+    });
+  }
 }

@@ -1,10 +1,10 @@
-<div>
+<div style="padding: 0; margin: 0;">
  
-  <main class="main" >
+  <main class="main  " >
     <app-navbar></app-navbar> <!-- Navbar component -->
   </main>
 
-  <div class="container-fluid px-0" >
+  <div class="container-fluid px-0 overflow-hidden" >
     <!-- Content will adjust within the container, depending on routes -->
     <router-outlet></router-outlet> <!-- Dynamic content rendered here -->
     
@@ -12,18 +12,13 @@
 
 
 
-    <div class="position-fixed bottom-0 end-0 mb-3 me-3">
-      <button class="btn btn-warning rounded-circle shadow-lg border-3 border-danger m-3" (click)="toggleContactMenu()">
-        <i class="bi bi-chevron-up fw-bold fs-2"></i>
-      </button>
-      <div class="d-flex flex-column gap-2 mt-2 align-items-center" [class.d-none]="!isContactMenuOpen">
-        <a href="https://wa.me/yourwhatsapplink" target="_blank" class="btn btn-success rounded-circle shadow">
-          <i class="bi bi-whatsapp"></i>
-        </a>
-        <a href="tel:+1234567890" class="btn btn-primary rounded-circle shadow">
-          <i class="bi bi-telephone"></i>
-        </a>
-      </div>
+    <div class="position-fixed bottom-0 end-0 mb-2 me-3 d-flex flex-column gap-2 align-items-center">
+      <a href="https://wa.me/919815355955" target="_blank" class="btn btn-success rounded-circle shadow">
+        <i class="bi bi-whatsapp fs-2"></i>
+      </a>
+      <a href="tel:919815355955" class="btn btn-primary rounded-circle shadow">
+        <i class="bi bi-telephone fs-2"></i>
+      </a>
     </div>
     
     

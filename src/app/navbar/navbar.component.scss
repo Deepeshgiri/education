@@ -1,13 +1,12 @@
 
 
 .top-navbar {
-  background-color: #1f0000;
+  
   .navbar-light {
     
     .navbar-nav {
       .nav-link {
-        color: #f80;
-        font-size: 16px;
+                font-size: 16px;
         font-weight: 700;
         padding: 6px 0;
         position: relative;
@@ -91,13 +90,15 @@
     
     .dropdown-menu {
       box-shadow: 0 2px 12px rgb(78, 5, 5);
-      border: none;
-      border-radius: 0;
+     
+      border-radius: 15px;
+
       margin: 0;
       padding: 10px;
 
       .dropdown-item {
         padding-left: 10px;
+       
 
         &:hover {
           background: #eea412;
@@ -109,7 +110,6 @@
 
   .navbar-toggler {
     border: 0;
-  
     
     background: #1f0000;
     padding: 0;
@@ -197,6 +197,34 @@
     width: 100%;
   }
 }
+
+
+
+
+/* Mobile Offcanvas Menu Styles */
+.offcanvas {
+  width: 280px; /* Adjust width as needed */
+  background-color: #1f0000;
+  color: #f80;
+}
+
+.offcanvas-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.offcanvas-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.offcanvas.nav-item.active{
+  color: aqua;
+}
+
+
+
+
 
 
 

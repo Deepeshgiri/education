@@ -9,27 +9,42 @@
 $primary: #1f0000;
 $danger: #f80;
 
-.homepage-container {
-  width: 100%;
-  margin: auto;
-}
+
 
 .animated-div {
-  background: linear-gradient(to right, #ff8000c4, #ffcc00ad, rgba(255, 136, 0, 0.274));
-  background-size: 200% 100%;
+  background: linear-gradient(
+    to right,
+    #ff8000c4 0%,
+    #ff9900c4 25%,
+    #ffcc00ad 50%,
+    #ff9900c4 75%,
+    #ff8000c4 100%
+  );
+  background-size: 300% 100%;
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
+  animation: moveColor 4s infinite ease-in-out;
 }
 
 @keyframes moveColor {
   0% {
-    background-position: 200% 50%;
+    background-position: 100% 50%;
   }
   100% {
     background-position: 0% 50%;
   }
 }
+
+.card-body {
+  margin-top: -10px; /* Slightly shift it up */
+  background: rgba(0, 0, 0, 0.05); /* Light background for readability */
+  padding: 5px;
+  border-radius: 6px;
+}
+
+
+
 
 /* Hover Effect on Card */
 .custom-card {
@@ -68,7 +83,7 @@ $danger: #f80;
 .quote-icon-top,
 .quote-icon-bottom {
   font-size: 34px;
-  color: #ff6600;
+  color: #1f0000;
   position: absolute;
 }
 
@@ -81,4 +96,92 @@ $danger: #f80;
   bottom: -10px;
   right: -10px;
   rotate: 180deg;
+}
+
+.section-title h2 {
+  position: relative;
+}
+
+.section-title  h2::after {
+  position: absolute;
+  left: 50%;
+  content: "";
+  width: 120px;
+  height: 2px;
+  background: #f80;
+  bottom: -6px;
+  margin-left: -63px;
+}
+
+.section-title  h2::before {
+  position: absolute;
+  left: 50%;
+  content: "";
+  width: 120px;
+  height: 2px;
+  background: #f80;
+  bottom: -12px;
+  margin-left: -50px;
+}
+
+
+.section {
+
+background:#F4CF9E;
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(1px);
+-webkit-backdrop-filter: blur(1px);
+border: 1px solid rgba(31, 0, 0, 0.35);
+}
+
+/* From https://css.glass */
+
+.our-features{
+  background: #F4CF9E;
+}
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next {
+  font-size: 24px !important;
+  background: #1f0000 !important;
+  color: white !important;
+  padding: 10px 15px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  opacity: 0.5;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+  left: -20px; /* Adjust as needed */
+}
+
+.owl-carousel .owl-nav .owl-next {
+  right: -20px; /* Adjust as needed */
+}
+
+
+.tes {
+  background-image: url('/assets/images/homepage/milestonebg1.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner-card{
+  background-image: url('/assets/images/banner-card.jpg');
+  background-size: cover;
+  
+ 
+}
+
+.counts {
+  background-image: url('/assets/images/homepage/funfacts.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

@@ -1,23 +1,184 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, HostListener ,AfterViewInit, ElementRef} from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import Aos from 'aos';
-
+import { CoreService } from '../../services/core.services';
+import { apiUrl } from '../../appconstant';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { CourseComponent } from "../course/course.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CarouselModule, CourseComponent, CourseComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  
+  encapsulation: ViewEncapsulation.None,
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+  slideShow: any = [];
+  baseUrl = apiUrl;
+  toppers: any[] = [];
+  testimonials: any = [];
+  features: any = [];
+  timeLeft: string = '';
+
+  constructor(private coreService: CoreService) {
+  }
+
+  ngOnInit(): void {
+    this.getSlideShow();
+    this.getToppers();
+    this.getFeatures();
+    this.startCountdown(new Date('2025-05-01T00:00:00'));
+  }
+
+  trackByFn(index: number, item: any): any {
+    return item.id || index; // Use `id` if available, otherwise use index
+  }
+  customOptions = {
+    loop: true,
+    margin: 15,
+    nav: true,
+    dots: true,
+    dotsEach: true,
+
+    navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
+
+    responsive: {
+      0: { items: 1 },
+      600: { items: 3 },
+      1000: { items: 5 },
+    },
+  };
+
+
+  featureOptions = {
+    loop: true,
+    margin: 15,
+    nav: true,
+    dots: true,
+    dotsEach: true,
+    slideBy: 6,
+
+    navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
+    autoplaySpeed: 800,
+
+    responsive: {
+      0: { items: 2, autoplaySlideBy: 2 },
+      600: { items: 4, autoplaySlideBy: 4 },
+      1000: { items: 6, autoplaySlideBy: 6 },
+    },
+  };
 
 
 
+  ngAfterViewInit(): void {
+    Aos.init({
+      duration: 600,
+      once: false,
+      mirror: true,
+    });
 
+    
 
-  
+    Aos.refresh();
+    this.getTestimonials();
+  }
+
+  ngOnDestroy(): void { }
+
+  startCountdown(targetDate: Date): void {
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate.getTime() - now;
+
+      if (distance < 0) {
+        this.timeLeft = 'Admissions Closed';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      this.timeLeft = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  }
+
+  getSlideShow() {
+    this.coreService.getRequest('web/slideshow').subscribe(
+      (data: any) => {
+        this.slideShow = data.map((item: { image: string }) => ({
+          ...item,
+          image: 'https://www.pinnacloeducare.com/uploads/slideshow/' + item.image,
+        }));
+      },
+      (error) => {
+        console.error('Error fetching slideshow:', error);
+      }
+    );
+  }
+
+  getFeatures() {
+    this.coreService.getRequest('web/features').subscribe(
+      (data: any) => {
+        this.features = data.map((item: { image: string }) => ({
+          ...item,
+          image: 'https://www.pinnacloeducare.com/uploads/features/' + item.image,
+        }));
+      },
+      (error) => {
+        console.error('Error fetching features:', error);
+      }
+    );
+  }
+
+  getTestimonials() {
+    this.coreService.getRequest('web/testimonials').subscribe(
+      (data: any) => {
+        this.testimonials = {
+          students: data
+            .filter((item: { category: string }) => item.category === 's')
+            .map((item: { image: string }) => ({
+              ...item,
+              image: 'https://www.pinnacloeducare.com/uploads/testimonials/' + item.image,
+            })),
+          parents: data
+            .filter((item: { category: string }) => item.category === 'p')
+            .map((item: { image: string }) => ({
+              ...item,
+              image: 'https://www.pinnacloeducare.com/uploads/testimonials/' + item.image,
+            })),
+        };
+
+      },
+      (error) => {
+        console.error('Error fetching testimonials:', error);
+      }
+    );
+  }
+
+  getToppers() {
+    this.coreService.getRequest('web/toppers').subscribe(
+      (data: any) => {
+        this.toppers = data.map((topper: { image: string }) => ({
+          ...topper,
+          image: topper.image
+            ? 'https://www.pinnacloeducare.com/uploads/toppers/' + topper.image
+            : '/assets/images/chashmish.png',
+        }));
+      },
+      (error) => console.error('Error fetching toppers:', error)
+    );
+  }
+
   directors = [
     {
       name: 'Rishabh Garg',
@@ -25,11 +186,10 @@ export class HomeComponent implements OnInit {
       qualification: 'B.Tech, IIT Roorkee',
       description: 'Passionate about problem-solving and mentoring students to achieve excellence in Mathematics.',
       image: 'https://www.pinnacloeducare.com/uploads/teachers/rishabh-garg.png',
-      twitter: 'https://twitter.com/rishabhgarg',
       linkedin: 'https://linkedin.com/in/rishabhgarg',
       youtube: 'https://youtube.com/c/RishabhGargMaths',
       facebook: 'https://facebook.com/rishabhgarg',
-      instagram: 'https://instagram.com/rishabhgarg'
+      instagram: 'https://instagram.com/rishabhgarg',
     },
     {
       name: 'Romy Garg',
@@ -39,9 +199,7 @@ export class HomeComponent implements OnInit {
       image: 'https://www.pinnacloeducare.com/uploads/teachers/romy-garg.png',
       twitter: 'https://twitter.com/romygarg',
       linkedin: 'https://linkedin.com/in/romygarg',
-      youtube: 'https://youtube.com/c/RomyGargChemistry',
       facebook: 'https://facebook.com/romygarg',
-      instagram: 'https://instagram.com/romygarg'
     },
     {
       name: 'Novel Jindal',
@@ -49,147 +207,36 @@ export class HomeComponent implements OnInit {
       qualification: 'B.Tech, IIT Roorkee',
       description: 'Physics enthusiast with a knack for simplifying complex concepts and fostering critical thinking.',
       image: 'https://www.pinnacloeducare.com/uploads/teachers/novel-jindal.png',
-      twitter: 'https://twitter.com/noveljindal',
       linkedin: 'https://linkedin.com/in/noveljindal',
-      youtube: 'https://youtube.com/c/NovelJindalPhysics',
       facebook: 'https://facebook.com/noveljindal',
-      instagram: 'https://instagram.com/noveljindal'
-    }
-  ];
-  
-  features = [
-    { title: 'Motivational & Counselling Sessions', image: 'https://www.pinnacloeducare.com/uploads/features/motivation.PNG' },
-    { title: 'Performance Analysis & Report', image: 'https://www.pinnacloeducare.com/uploads/features/performance analaysis.PNG' },
-    { title: 'Lecture Recording Lab', image: 'https://www.pinnacloeducare.com/uploads/features/lecture recording.PNG' },
-    { title: 'Objective + Subjective', image: 'https://www.pinnacloeducare.com/uploads/features/objective subjective.PNG' },
-    { title: 'Smart AC Classrooms', image: 'https://www.pinnacloeducare.com/uploads/features/acclassroom.PNG' },
-    { title: 'IITIAN Doctor Faculty', image: 'https://www.pinnacloeducare.com/uploads/features/doctor.PNG' },
-    { title: 'Unlimited Doubt Session', image: 'https://www.pinnacloeducare.com/uploads/features/doubt.PNG' },
-    { title: 'Extra Support to Weaker Students', image: 'https://www.pinnacloeducare.com/uploads/features/extra support.PNG' },
-    { title: 'CCTV Campus', image: 'https://www.pinnacloeducare.com/uploads/features/cctv.PNG' },
-    { title: 'Pre-Planned Coursework & Planner', image: 'https://www.pinnacloeducare.com/uploads/features/preplanned.PNG' },
-    { title: 'Biometric Attendance', image: 'https://www.pinnacloeducare.com/uploads/features/biometric.PNG' },
-    { title: 'Revision Classes & Self Study Zone', image: 'https://www.pinnacloeducare.com/uploads/features/revision classes.PNG' }
+      instagram: 'https://instagram.com/noveljindal',
+    },
   ];
 
 
-  images = [
-    { src: 'assets/images/toppers/aashi.jpg', text: 'Deepesh kumar description' },
-    { src: 'assets/images/toppers/himanshi.jpg', text: 'Card 2 description' },
-    { src: 'assets/images/toppers/priya.jpg', text: 'Card 3 description' },
-    { src: 'assets/images/toppers/prachi.jpg', text: 'Card 4 description' },
-    { src: 'assets/images/toppers/aashi.jpg', text: 'Card 5 description' },
-    { src: 'assets/images/toppers/priya.jpg', text: 'Card 6 description' },
-    { src: 'assets/images/toppers/prachi.jpg', text: 'Card 7 description' },
-    { src: 'assets/images/toppers/himanshi.jpg', text: 'Card 8 description' }
+  newsEvents = [
+    {
+      title: 'Upcoming Seminar on AI in Education',
+      description: 'Join us for an insightful discussion on AI-driven learning methodologies.',
+      image: './assets/images/medical1.png',
+      category: 'Education',
+
+      link: '#'
+    },
+    {
+      title: 'Annual Science Fair - Register Now!',
+      description: 'Don\'t miss our grand Science Fair with exciting projects and prizes.',
+      image: './assets/images/foundation1.png',
+      category: 'Events',
+      link: '#'
+    },
+    {
+      title: 'Exclusive Coding Bootcamp for Beginners',
+      description: 'Kickstart your programming journey with our expert-led bootcamp.',
+      image: './assets/images/engineering1.jpg',
+      category: 'Workshop',
+
+      link: '#'
+    }
   ];
-
-
-  testimonials = {
-    students: [
-      {
-        name: 'Ishatpreet',
-        image: 'https://www.pinnacloeducare.com/ishpreet.PNG',
-        message:
-          'Pinnacle provides a right way to success. All the teachers of Pinnacle are very supportive. They helped me in setting my goals and time. They showed me the mirror of guidance to help me for reaching Pinnacle.',
-      },
-      {
-        name: 'Yadwinder Singh',
-        image: 'https://www.pinnacloeducare.com/yadwinder.JPG',
-        message:
-          'My experience here was great. I am fully satisfied with the Pinnacle System. All the faculty members have great experience of producing awesome results.',
-      },
-    ],
-    parents: [
-      {
-        name: 'Reeta Rani',
-        image: 'https://www.pinnacloeducare.com/uploads/testimonials/reetarani.JPG',
-        message:
-          'My daughter Hitakshi is a student of Pinnacle Educare in the medical stream. As parents, we are highly satisfied with the hard work and teaching methodology of the Pinnacle faculty.',
-      },
-      {
-        name: 'Kuldeep Singh',
-        image: 'https://www.pinnacloeducare.com/uploads/testimonials/kuldeep%20Singh.PNG',
-        message:
-          'My daughter is in touch with Pinnacle Educare since its establishment. The dedicated and diligent team at Pinnacle has come up with great results in Sangrur within a short time span. The team focuses on quality education.',
-      },
-    ],
-  };
-
-
-  ngOnInit(): void {
-    this.setVisibleCards();
-    this.autoSlideInterval = setInterval(() => this.nextCard(), 2000);
-  }
-
-  ngAfterViewInit(): void {
-    Aos.init({
-      duration: 600,
-      once: false,
-      mirror: true
-    }); 
-    Aos.refresh(); // ✅ Refresh animations after initialization
-  }
-
-  ngOnDestroy(): void {
-    clearInterval(this.autoSlideInterval); // ✅ Prevent memory leaks
-  }
-
-
-  
-  visibleCards: any[] = [];
-  startIndex = 0;
-  autoSlideInterval: any;
-  cardsPerPage = 5; // Default cards per page
-
-
-  // Adjust the number of visible cards based on screen size
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
-    this.setVisibleCards();
-  }
-
-  setVisibleCards(): void {
-    // Get the current screen size
-    const screenWidth = window.innerWidth;
-
-    if (screenWidth < 576) {
-      this.cardsPerPage = 1; // Show 1 card on extra small screens
-    } else if (screenWidth >= 576 && screenWidth < 768) {
-      this.cardsPerPage = 2; // Show 2 cards on small screens
-    } else if (screenWidth >= 768 && screenWidth < 992) {
-      this.cardsPerPage = 3; // Show 3 cards on medium screens
-    } else if (screenWidth >= 992) {
-      this.cardsPerPage = 5; // Show 5 cards on large screens
-    }
-
-    // Update visible cards based on the current cardsPerPage
-    this.visibleCards = this.images.slice(this.startIndex, this.startIndex + this.cardsPerPage);
-  }
-
-  nextCard(): void {
-    if (this.startIndex + this.cardsPerPage < this.images.length) {
-      this.startIndex++;
-    } else {
-      this.startIndex = 0; // Loop back to the beginning
-    }
-    this.setVisibleCards();
-  }
-
-  prevCard(): void {
-    if (this.startIndex > 0) {
-      this.startIndex--;
-    } else {
-      this.startIndex = this.images.length - this.cardsPerPage; // Go to the last set
-    }
-    this.setVisibleCards();
-  }
-
-  stopAutoSlide(): void {
-    clearInterval(this.autoSlideInterval);
-  }
-
-
-  
-
 }

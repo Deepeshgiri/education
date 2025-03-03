@@ -25,16 +25,7 @@
     justify-content: center;
   }
   
-  .card-title {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-  }
-  
-  .card-text {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.8;
-  }
+
   
   .list-unstyled li {
     margin-bottom: 0.5rem;
@@ -58,19 +49,20 @@
     transform: translateY(-2px);
   }
 
-
   .rotate-dna {
-    animation: rotateDNA 15s linear infinite;
+    display: inline-block; /* Ensures proper rotation */
+    animation: rotateDNA 10s linear infinite; /* Adjust speed if needed */
 }
 
 @keyframes rotateDNA {
-    0% {
+    from {
         transform: rotate(0deg);
     }
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }
+
 
 
 .scolor{
@@ -79,4 +71,13 @@
 
 .pcolor{
   background-color: #1f0000;
+}
+
+.foundation-bg{
+ position: relative;
+}
+
+.bg-img{
+  opacity: 0;
+  position:absolute;
 }

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-contact',
@@ -8,8 +9,13 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit{
 
+    ngOnInit(){
+      AOS.init();
+      AOS.refreshHard();
+    }
+  
   contactForm = {
     name: '',
     email: '',

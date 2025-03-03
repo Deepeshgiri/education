@@ -16,6 +16,7 @@ import { EnggelevenComponent } from './pages/course/engineering/enggeleven/engge
 import { EnggtwelveComponent } from './pages/course/engineering/enggtwelve/enggtwelve.component';
 import { MedtwelveComponent } from './pages/course/medical/medtwelve/medtwelve.component';
 import { MedelevenComponent } from './pages/course/medical/medeleven/medeleven.component';
+import { PsatComponent } from './pages/exam/psat/psat.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -42,7 +43,7 @@ export const routes: Routes = [
 
 
 
-
+{path:'exam/psat/about', component:PsatComponent}
 
 
 ];
