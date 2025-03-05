@@ -331,16 +331,16 @@
 
 
 <section class="news-events py-5">
-  <div class="container">
+  <div class="container section-title">
     <h2 class="text-center fw-bold">Latest News & Events</h2>
     <p class="text-center text-muted mb-4">Stay updated with our latest happenings</p>
 
-    <div class="row g-4">
-      <div class="col-md-4" *ngFor="let event of newsEvents">
-        <div class="news-card rounded shadow-sm overflow-hidden">
-          <img [src]="event.image" class="img-fluid w-100" alt="News">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-md-4 rounded-4" *ngFor="let event of newsEvents">
+        <div class="news-card h-100 w-100 rounded-4 shadow-lg ">
+          <img [src]="event.image" class="img-fluid  card-img-top h-50" alt="News">
           <div class="p-3 text-truncate">
-            <span class="badge" >{{ event.category }}</span>
+            <span class="badge bg-primary" >{{ event.category }}</span>
             <h5 class="mt-2 fw-bold">{{ event.title }}</h5>
             <p class="text-muted text-wrap small">{{ event.description }}</p>
             <a [href]="event.link" class="fw-bold" >Read More <i class="bi bi-arrow-right"></i></a>

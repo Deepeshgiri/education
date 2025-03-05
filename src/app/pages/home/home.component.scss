@@ -98,31 +98,7 @@ $danger: #f80;
   rotate: 180deg;
 }
 
-.section-title h2 {
-  position: relative;
-}
 
-.section-title  h2::after {
-  position: absolute;
-  left: 50%;
-  content: "";
-  width: 120px;
-  height: 2px;
-  background: #f80;
-  bottom: -6px;
-  margin-left: -63px;
-}
-
-.section-title  h2::before {
-  position: absolute;
-  left: 50%;
-  content: "";
-  width: 120px;
-  height: 2px;
-  background: #f80;
-  bottom: -12px;
-  margin-left: -50px;
-}
 
 
 .section {

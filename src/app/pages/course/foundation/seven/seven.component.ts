@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import AOS from 'aos';
 
 @Component({
@@ -13,6 +13,7 @@ export class SevenComponent {
   ngOnInit() {
  AOS.refresh();
  AOS.init();
+ this.onScroll();
   }
 
   courseTitle = "Master Class 7 with Expert Guidance";
@@ -38,4 +39,20 @@ export class SevenComponent {
     { icon: "bi-arrow-up-right-circle", text: "Lay a strong foundation for higher studies", color: "danger" },
     { icon: "bi-mic", text: "Enhance English speaking and personality development", color: "success" }
   ];
+
+
+
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    const bus = document.querySelector('.bus') as HTMLElement;
+    const scrollPosition = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+    // Calculate movement percentage (0% at top, 100% at max scroll)
+    const moveDistance = Math.min((scrollPosition / maxScroll) * 100, 100);
+    
+    // Move bus from left (start) to right (end)
+    bus.style.transform = `translateX(${moveDistance}%)`;
+  }
 }
