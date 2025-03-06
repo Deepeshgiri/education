@@ -76,10 +76,10 @@
                                     class="bi bi-check-circle-fill text-success me-2"></i> Social Studies</li>
                         </ul>
                         <div class="text-center mt-3">
-                            <button class="btn btn-warning  m-2">Class 7</button>
-                            <button class="btn btn-warning m-2">Class 8</button>
-                            <button class="btn btn-warning m-2">Class 9</button>
-                            <button class="btn btn-warning m-2">Class 10</button>
+                            <button class="btn btn-warning  m-2" routerLink="/course/foundation/seven">Class 7</button>
+                            <button class="btn btn-warning m-2" routerLink="/course/foundation/eight">Class 8</button>
+                            <button class="btn btn-warning m-2" routerLink="/course/foundation/nine">Class 9</button>
+                            <button class="btn btn-warning m-2" routerLink="/course/foundation/ten">Class 10</button>
                         </div>
                     </div>
                 </div>
@@ -117,8 +117,8 @@
                                     class="bi bi-check-circle-fill text-success me-2"></i> Zoology</li>
                         </ul>
                         <div class="text-center mt-3">
-                            <button class="btn btn-danger m-2">Class 11</button>
-                            <button class="btn btn-danger m-2">Class 12</button>
+                            <button class="btn btn-danger m-2" routerLink="/course/medical/eleven">Class 11</button>
+                            <button class="btn btn-danger m-2" routerLink="/course/medical/twelve">Class 12</button>engineering
                         </div>
                     </div>
                 </div>
@@ -162,8 +162,8 @@
                         </ul>
 
                         <div class="text-center text mt-3" style="color:#f80">
-                            <button class="btn bg-primary m-2 fw-bold" style="color:#f80" >Class 11</button>
-                            <button class="btn bg-primary m-2 fw-bold " style="color:#f80" >Class 12</button>
+                            <button class="btn bg-primary m-2 fw-bold" style="color:#f80"  routerLink="/course/engineering/eleven">Class 11</button>
+                            <button class="btn bg-primary m-2 fw-bold " style="color:#f80"  routerLink="/course/engineering/twelve">Class 12</button>
                         </div>
                     </div>
                 </div>
@@ -179,9 +179,13 @@
             <p class="lead mb-4 text-light fw-bold">Secure your seat today or get free guidance from experts.</p>
 
             <div class="d-flex justify-content-center gap-3">
-                <a href="#" class="btn btn-lg btn-warning fw-bold px-4 shadow">📞 Get Free Counseling</a>
+                <button type="button" class="btn btn-lg btn-warning fw-bold px-4 shadow" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    📞 Get Free Counseling
+                  </button>
 
             </div>
+
+           
         </div>
     </section>
 </div>

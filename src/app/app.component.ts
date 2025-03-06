@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from './layout/footer/footer.component';
 import Aos from 'aos';
+import { CouncellingComponent } from "./common/councelling/councelling.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, CouncellingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

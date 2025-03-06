@@ -1,1 +1,136 @@
-<p>ten works!</p>
+<section class="container-fluid  m-0 p-0">
+    <!-- Course Overview Section -->
+    <section class="container my-5 text-center">
+      <h2 class="text-primary fw-bold display-4 mb-3">Master Class 10 with Expert Guidance</h2>
+      <p class="fs-5 mx-auto w-75">"Unlock your potential with our comprehensive <strong>Class 10</strong>  offline classes. Designed to align with the latest CBSE/ICSE curriculum, this course offers interactive lessons, expert mentorship, and a wealth of resources to help you excel academically and beyond."
+    </p>
+      <button type="button" class="btn  bg-primary text-warning rounded-5 p-2 fw-bold px-4 shadow " data-aos="zoom-in"
+      data-bs-toggle="modal" data-bs-target="#contactModal">
+      🌟 Enroll Now
+    </button>
+    </section>
+    
+    
+    
+    <!-- Course Features Section -->
+    
+    
+    <section class="container-fluid bg-warning bg-opacity-25 py-5 ">
+      <div class="section-title p-0">
+        <h2 class="text-center mb-4 text-primary fw-bold display-5" data-aos="fade-up"> What You'll Get</h2>
+      </div>
+      
+      <div class="row text-center g-5 m-2">
+        <div class="col-md-4" *ngFor="let feature of courseFeatures; let i = index" data-aos="zoom-in" [attr.data-aos-delay]="i * 100">
+          <div class="card h-100 border-3 rounded-5 shadow-sm p-4">
+            <i class="material-icons text-{{ feature.color }} display-4 mb-3">{{ feature.icon }}</i>
+            <h4 class="fw-bold mb-3 text-{{ feature.color }}">{{ feature.title }}</h4>
+            <p class="text-muted">{{ feature.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+    <!-- Demo Lectures Section -->
+    <section class="container-fluids bg-light section-title my-5">
+      <h2 class="text-center mb-4 display-5 fw-bold">🎥 Watch Demo Lectures</h2>
+      <div class="row g-5 ms-5 me-5 ">
+        <div class="col-md-6">
+          <div class="demo-video ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
+            <iframe src="https://www.youtube.com/embed/ndJznszTTLY?si=Qpmsi31Lwj9ZJJOR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="demo-video ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
+            <iframe src="https://www.youtube.com/embed/ndJznszTTLY?si=Qpmsi31Lwj9ZJJOR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <!-- Key Highlights Section -->
+    <section class="  section-title">
+    
+      <h2 class="fw-bold text-center  mb-4 display-5">Why Choose This Course?</h2>
+    
+    
+      <div class="container py-3">
+    
+        <div class="row align-items-stretch g-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="./assets/images/why1.jpg" class="img-fluid rounded-4 w-100 h-100 shadow-lg" alt="Course Highlights">
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="card border-0 shadow-lg p-4">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex align-items-center border-0 py-3 highlight-hover" data-aos="fade-up" *ngFor="let highlight of courseHighlights">
+                  <i class="{{ highlight.icon }} text-{{ highlight.color }} me-3 fs-4"></i>
+                  <span class="fs-5">{{ highlight.text }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <!-- Enroll Now Section -->
+    <section class="py-5 text-center bg-success text-white bg-opacity-50">
+      <div class="container section-title">
+        <h2 class="fw-bold  text-primary display-5 mb-3">Ready to Start?</h2>
+        <p class="lead mb-4 text-white fw-bold">Join thousands of students who have transformed their learning experience. Enroll now or get free guidance from our experts!</p>
+
+
+        <button type="button" class="btn btn-lg btn-warning fw-bold px-5 shadow-sm" data-aos="zoom-in"
+      data-bs-toggle="modal" data-bs-target="#contactModal">
+      📞 Get Free Counseling
+    </button>
+      </div>
+    </section>
+    
+    
+    
+    
+    <!-- Eligibility Section -->
+    <section class="container my-5">
+      <div class="row  justify-content-center align-items-stretch"> <!-- Ensure equal height -->
+        
+        <!-- Text Content -->
+        <div class="col-12 col-md-6 d-flex p-0 m-0">
+          <div class="card border-0 text-center w-100 d-flex flex-column justify-content-center section-title" data-aos="fade-up">
+            <h2 class="fw-bold  mb-3 display-5">
+              <i class="bi bi-person-check text-primary me-2"></i> Who Is This For?
+            </h2>
+            <p class="lead text-muted mb-4">
+              This course is perfect for students in 
+              <span class="fw-bold text-warning">Class 10</span> or those preparing for Class 10 exams. 
+              Whether you're aiming for academic excellence or competitive exams, this course has you covered.
+            </p>
+            <ul class="list-group list-group-flush mt-3">
+              <li class="list-group-item border-0 py-3 d-flex align-items-center" *ngFor="let item of eligibilityHighlights" data-aos="fade-up">
+                <i class="{{ item.icon }} text-{{ item.color }} fs-4 me-2"></i> 
+                <span class="fs-5">{{ item.text }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Image Section -->
+        <div class="col-12 col-md-6 d-flex p-0 m-0">
+          <img src="./assets/images/seven1.jpg" alt="Class 7" 
+            class="img-fluid  w-100 h-100 object-fit-fill" 
+            data-aos="fade-left">
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    </section>

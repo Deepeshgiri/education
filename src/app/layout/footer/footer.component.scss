@@ -1,5 +1,24 @@
-.footer a:hover {
-    color: #FF5733; /* Spicy orange when hovered */
-    text-decoration: underline; /* Optional underline effect */
-  }
-  
+/* Footer Links */
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+  color: #ff8c00; /* Orange */
+  padding-left: 5px;
+}
+
+/* Social Icons */
+.footer-icon {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-icon:hover {
+  color: #ff8c00; /* Orange */
+}
