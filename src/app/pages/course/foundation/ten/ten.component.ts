@@ -42,13 +42,15 @@ eligibilityHighlights = [
 // For "Why Choose This Course?" Section (Class 8)
 courseHighlights = [
   { icon: "bi-pencil-square", text: "Expert-curated study materials and notes", color: "primary" },
-  { icon: "bi-tv", text: "Interactive video lectures with engaging animations", color: "success" },
+  { icon: "bi-tv", text: "Interactive lectures with engaging experiments and activities", color: "success" },
   { icon: "bi-list-task", text: "Regular assignments and practice tests", color: "danger" },
-  { icon: "bi-person-video3", text: "Live doubt-solving sessions with subject experts", color: "warning" },
-  { icon: "bi-clock-history", text: "Self-paced learning with structured modules", color: "info" },
-  { icon: "bi-journal-check", text: "Comprehensive revision and mock tests", color: "primary" },
+  { icon: "bi-person-video3", text: "Regular doubt-solving sessions with subject experts", color: "warning" },
+  { icon: "bi-clock-history", text: "learning with structured modules", color: "info" },
+  { icon: "bi-journal-check", text: "Comprehensive revision schedule and mock tests", color: "primary" },
   { icon: "bi-stars", text: "Success strategies from top educators", color: "danger" },
-  { icon: "bi-people", text: "Collaborative learning with peer discussions", color: "success" }
+  { icon: "bi-people", text: "Collaborative learning with peer discussions", color: "success" },
+  { icon: "bi-person", text: "Extra ordinary personal attention on students", color: "primary" },
+  { icon: "bi-stars", text: "Regular parent teacher interaction for betterment of student", color: "primary"  }
 ];
 
 

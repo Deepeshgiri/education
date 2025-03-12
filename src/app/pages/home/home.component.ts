@@ -70,7 +70,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     autoplaySpeed: 800,
 
     responsive: {
-      0: { items: 2, autoplaySlideBy: 2 },
+      0: { items: 1, autoplaySlideBy: 2 },
       600: { items: 4, autoplaySlideBy: 4 },
       1000: { items: 6, autoplaySlideBy: 6 },
     },
@@ -219,7 +219,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       title: 'Upcoming Seminar on AI in Education',
       description: 'Join us for an insightful discussion on AI-driven learning methodologies.',
       image: './assets/images/medical1.png',
-      category: 'Education',
+      category: 'news and events',
 
       link: '#'
     },
@@ -227,16 +227,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       title: 'Annual Science Fair - Register Now!',
       description: 'Don\'t miss our grand Science Fair with exciting projects and prizes.',
       image: './assets/images/foundation1.png',
-      category: 'Events',
-      link: '#'
-    },
-    {
-      title: 'Exclusive Coding Bootcamp for Beginners',
-      description: 'Kickstart your programming journey with our expert-led bootcamp.',
-      image: './assets/images/engineering1.jpg',
-      category: 'Workshop',
-
+      category: 'Announcements',
       link: '#'
     }
+  
   ];
 }

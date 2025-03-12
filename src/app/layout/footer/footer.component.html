@@ -1,6 +1,6 @@
-<footer class="footer bg-dark py-4 border-top border-warning">
-  <div class="container">
-    
+<footer class="footer bg-dark py-4 border-top border-warning overflow-hidden">
+  <div class="container-fluid">
+
     <!-- Newsletter Section -->
     <div class="bg-dark text-light py-3">
       <div class="container">
@@ -23,11 +23,11 @@
     </div>
 
     <!-- Divider Line -->
-    <hr class="w-100 bg-warning" style="height: 3px; opacity: 1;">
+    <hr class="col-12 bg-warning" style="height: 3px; opacity: 1;">
 
-    <div class="row">
+    <div class="row d-flex  justify-content-center">
       <!-- About Us Section -->
-      <div class="col-md-4">
+      <div class="col-md-4 col-12  border-end  border-light text-center">
         <h3 class="fw-bold text-warning">About Us</h3>
         <ul class="list-unstyled">
           <li><a routerLink="/about" class="footer-link">Values and Vision</a></li>
@@ -38,23 +38,55 @@
         </ul>
       </div>
 
+   
       <!-- Our Courses Section -->
-      <div class="col-md-4">
-        <h3 class="fw-bold text-warning">Our Courses</h3>
-        <ul class="list-unstyled">
-          <li><a routerLink="/course/foundation/seven" class="footer-link">Foundation 7th</a></li>
-          <li><a routerLink="/course/foundation/eight" class="footer-link">Foundation 8th</a></li>
-          <li><a routerLink="/course/foundation/nine" class="footer-link">Foundation 9th</a></li>
-          <li><a routerLink="/course/foundation/ten" class="footer-link">Foundation 10th</a></li>
-          <li><a routerLink="/course/medical/eleven" class="footer-link">Medical 11th</a></li>
-          <li><a routerLink="/course/medical/twelve" class="footer-link">Medical 12th</a></li>
-          <li><a routerLink="/course/engineering/eleven" class="footer-link">Engineering 11th</a></li>
-          <li><a routerLink="/course/engineering/twelve" class="footer-link">Engineering 12th</a></li>
-        </ul>
+      <div class="col-12 col-md-4 p-0 m-0 border-start text-center border-light">
+        
+          <h3 class="fw-bold text-center text-warning ">Our Courses</h3>
+          <div class="row text-light d-flex  text-center justify-content-center">
+
+
+            <!-- Foundation -->
+            <div class="col-4 col-sm-4 col-lg-4 ps-4 text-center ">
+              <h5 class="text-decoration-underline">Foundation</h5>
+              <ul class="list-unstyled ">
+                <li><a routerLink="/course/foundation/seven" class="footer-link">7th</a></li>
+                <li><a routerLink="/course/foundation/eight" class="footer-link">8th</a></li>
+                <li><a routerLink="/course/foundation/nine" class="footer-link">9th</a></li>
+                <li><a routerLink="/course/foundation/ten" class="footer-link">10th</a></li>
+              </ul>
+            </div>
+
+            <!-- Medical -->
+            <div class="col-4 col-sm-4 col-lg-4 ps-4 border-start border-warning">
+              <h5 class="text-decoration-underline">Medical</h5>
+              <ul class="list-unstyled ">
+                <li><a routerLink="/course/medical/eleven" class="footer-link">11th</a></li>
+                <li><a routerLink="/course/medical/twelve" class="footer-link">12th</a></li>
+                <li><a routerLink="/course/medical/repeat" class="footer-link">repeat</a></li>
+
+              </ul>
+            </div>
+
+            <!-- Engineering -->
+            <div class="col-4 col-sm-4 col-lg-4 ps-4 border-start border-warning">
+              <h5 class="text-decoration-underline">Engineering</h5>
+              <ul class="list-unstyled ">
+                <li><a routerLink="/course/engineering/eleven" class="footer-link">11th</a></li>
+                <li><a routerLink="/course/engineering/twelve" class="footer-link">12th</a></li>
+                <li><a routerLink="/course/engineering/repeat" class="footer-link">repeat</a></li>
+              </ul>
+
+            </div>
+          </div>
+        
       </div>
 
+
+   
+     
       <!-- Admission Section -->
-      <div class="col-md-4">
+      <div class="col-12 col-md-4 border-start border-light text-center">
         <h3 class="fw-bold text-warning">Admission</h3>
         <ul class="list-unstyled">
           <li><a href="https://www.pinnacloeducare.com/admission-process" class="footer-link">Admission Process</a></li>

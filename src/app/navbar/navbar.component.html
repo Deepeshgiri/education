@@ -18,8 +18,46 @@
                 <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a class="nav-link" routerLink="/">Home</a>
                 </li>
-
                 <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Courses</a>
+                  <ul class="dropdown-menu pe-5 ps-3">
+                    <div class="col-12  gap-2 text-center d-flex " >
+                      
+                      <!-- Foundation -->
+                      <div class=" col-4 pe-3">
+                        <h6 class="text-warning text-decoration-underline">Foundation</h6>
+                        <ul class=" text-start list-unstyled text-start">
+                          <li><a routerLink="/course/foundation/seven" class="dropdown-item">7th</a></li>
+                          <li><a routerLink="/course/foundation/eight" class="dropdown-item">8th</a></li>
+                          <li><a routerLink="/course/foundation/nine" class="dropdown-item">9th</a></li>
+                          <li><a routerLink="/course/foundation/ten" class="dropdown-item">10th</a></li>
+                        </ul>
+                      </div>
+                
+                      <!-- Medical -->
+                      <div class="text-start col-4">
+                        <h6 class="text-warning text-decoration-underline">Medical</h6>
+                        <ul class="border-start border-primary border-1  list-unstyled text-start">
+                          <li><a routerLink="/course/medical/eleven" class="dropdown-item">11th</a></li>
+                          <li><a routerLink="/course/medical/twelve" class="dropdown-item">12th</a></li>
+                        </ul>
+                      </div>
+                
+                      <!-- Engineering -->
+                      <div class="text-start col-4">
+                        <h6 class="text-warning text-decoration-underline">Engineering</h6>
+                        <ul class=" border-start border-primary border-1 list-unstyled text-start">
+                          <li><a routerLink="/course/engineering/eleven" class="dropdown-item">11th</a></li>
+                          <li><a routerLink="/course/engineering/twelve" class="dropdown-item">12th</a></li>
+                        </ul>
+                      </div>
+                
+                    </div>
+                  </ul>
+                </li>
+                
+
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Courses</a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li class="dropdown-submenu position-relative">
@@ -47,32 +85,48 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li> -->
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Exam</a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li class="dropdown-submenu position-relative">
-                            <a class="dropdown-item dropdown-toggle">PSAT</a>
-                            <ul class="dropdown-menu position-absolute start-100 top-0">
-                                <li><a class="dropdown-item" routerLink="/exam/psat/about">About</a></li>
-                                <li><a class="dropdown-item" routerLink="/exam/psat/register">Register</a></li>
-                                <li><a class="dropdown-item" routerLink="/exam/psat/result">Result</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                        <li class="dropdown-submenu position-relative">
-                            <a class="dropdown-item dropdown-toggle">PTQE</a>
-                            <ul class="dropdown-menu position-absolute start-100 top-0">
-                                <li><a class="dropdown-item" routerLink="/exam/ptqe/about">About</a></li>
-                                <li><a class="dropdown-item" routerLink="/exam/ptqe/register">Register</a></li>
-                                <li><a class="dropdown-item" routerLink="/exam/ptqe/result">Result</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                        <li><a class="dropdown-item" routerLink="/exam/how-to-register">How to Register</a></li>
-                    </ul>
+                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Exam</a>
+                  <ul class="dropdown-menu pe-5 ps-3">
+                    <div class="col-12 col-md-12 gap-2 text-center d-flex " >
+                      
+                      <!-- Foundation -->
+                      <div class=" col-4">
+                        <h6 class="text-warning text-start text-decoration-underline">PSAT</h6>
+                        <ul class=" list-unstyled text-start">
+                          <li><a class="dropdown-item" routerLink="/exam/psat/about">About</a></li>
+                          <li><a class="dropdown-item" routerLink="/exam/psat/register">Register</a></li>
+                          <li><a class="dropdown-item" routerLink="/exam/psat/result">Result</a></li>
+                        </ul>
+                      </div>
+                
+                      <!-- Medical -->
+                      <div class=" col-4">
+                        <h6 class=" text-warning text-start text-decoration-underline">PTQE</h6>
+                        <ul class="border-start border-primary border-1 list-unstyled text-start">
+                          <li><a class="dropdown-item" routerLink="/exam/psat/about">About</a></li>
+                        <li><a class="dropdown-item" routerLink="/exam/psat/register">Register</a></li>
+                        <li><a class="dropdown-item" routerLink="/exam/psat/result">Result</a></li>
+                        </ul>
+                      </div>
+                
+                      <!-- Engineering -->
+                      <div class="col-4">
+                        <h6 class="text-warning text-start text-decoration-underline">Register</h6>
+                        <ul class=" border-start border-primary border-1 list-unstyled text-start">
+                          
+                          <li><a class="dropdown-item" routerLink="/exam/how-to-register">How to Register</a></li>
+                        </ul>
+                      </div>
+                
+                    </div>
+                  </ul>
                 </li>
+
+
+                
 
                 <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" routerLink="/contact">Contact</a>

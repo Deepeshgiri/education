@@ -33,24 +33,27 @@ export class NineComponent {
 eligibilityHighlights = [
   { icon: "bi-book-half", text: "Complete coverage of CBSE/ICSE Class 8 syllabus", color: "primary" },
   { icon: "bi-lightbulb", text: "Sharpen problem-solving skills for competitive exams", color: "success" },
-  { icon: "bi-brain", text: "Develop analytical and critical thinking abilities", color: "danger" },
+  { icon: "bi-diagram-2", text: "Develop analytical and critical thinking abilities", color: "danger" },
   { icon: "bi-person-check", text: "Boost confidence in tackling challenging subjects", color: "warning" },
   { icon: "bi-globe", text: "Improve general knowledge and awareness", color: "info" },
   { icon: "bi-bar-chart-line", text: "Understand concepts through visual aids and experiments", color: "primary" },
-  { icon: "bi-trophy", text: "Get ready for NTSE, Olympiads, and other competitive exams", color: "danger" },
+  { icon: "bi-trophy", text: "Get ready for IMO, ISA, NSTSE, SOF, Olympiads, and other competitive exams", color: "danger" },
   { icon: "bi-mic", text: "Enhance communication and presentation skills", color: "success" }
 ];
 
 // For "Why Choose This Course?" Section (Class 8)
+// For "Why Choose This Course?" Section (Class 8)
 courseHighlights = [
   { icon: "bi-pencil-square", text: "Expert-curated study materials and notes", color: "primary" },
-  { icon: "bi-tv", text: "Interactive video lectures with engaging animations", color: "success" },
+  { icon: "bi-tv", text: "Interactive lectures with engaging experiments and activities", color: "success" },
   { icon: "bi-list-task", text: "Regular assignments and practice tests", color: "danger" },
-  { icon: "bi-person-video3", text: "Live doubt-solving sessions with subject experts", color: "warning" },
-  { icon: "bi-clock-history", text: "Self-paced learning with structured modules", color: "info" },
-  { icon: "bi-journal-check", text: "Comprehensive revision and mock tests", color: "primary" },
+  { icon: "bi-person-video3", text: "Regular doubt-solving sessions with subject experts", color: "warning" },
+  { icon: "bi-clock-history", text: "learning with structured modules", color: "info" },
+  { icon: "bi-journal-check", text: "Comprehensive revision schedule and mock tests", color: "primary" },
   { icon: "bi-stars", text: "Success strategies from top educators", color: "danger" },
-  { icon: "bi-people", text: "Collaborative learning with peer discussions", color: "success" }
+  { icon: "bi-people", text: "Collaborative learning with peer discussions", color: "success" },
+  { icon: "bi-person", text: "Extra ordinary personal attention on students", color: "primary" },
+  { icon: "bi-stars", text: "Regular parent teacher interaction for betterment of student", color: "primary"  }
 ];
 
 

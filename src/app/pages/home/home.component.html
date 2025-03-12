@@ -46,14 +46,16 @@
 
 
 
- 
-  
-  <div class="container-fluid p-0 m-0 bg-primary d-flex flex-column flex-md-row align-items-center justify-content-between px-5 py-3 text-center text-md-start">
+
+
+  <div
+    class="container-fluid p-0 m-0 bg-primary d-flex flex-column flex-md-row align-items-center justify-content-between px-5 py-3 text-center text-md-start">
     <!-- Left: Admission Open Text -->
     <h2 class="text-white fw-bold mb-2 mb-md-0">Admission Open</h2>
-  
+
     <!-- Center: Register Button -->
-    <button class="btn btn-warning rounded-3 text-primary fw-bold fs-5 px-4 mb-2 mb-md-0"  data-bs-toggle="modal" data-bs-target="#contactModal">
+    <button class="btn btn-warning rounded-3 text-primary fw-bold fs-5 px-4 mb-2 mb-md-0" data-bs-toggle="modal"
+      data-bs-target="#contactModal">
       Register Now <i class="bi bi-arrow-right fs-5"></i>
     </button>
 
@@ -66,35 +68,35 @@
     <div class="container text-center mb-4 section-title">
       <h2 class="text-primary fw-bold">Our Shining Stars</h2>
     </div>
-  
-    <div class="container-fluid " >
+
+    <div class="container-fluid ">
       <owl-carousel-o [options]="customOptions">
         <ng-container *ngFor="let card of toppers;trackBy: trackByFn">
           <ng-template carouselSlide>
             <div class="item p-3">
               <div class="card w-100 border border-primary rounded-4"
-              style="background: linear-gradient(to top, #f2dec5 0% 33%, #ffffff 33% 66%, #f2dec5 66% 100%);">
-            
-                
+                style="background: linear-gradient(to top, #f2dec5 0% 33%, #ffffff 33% 66%, #f2dec5 66% 100%);">
+
+
                 <!-- Image Container -->
 
                 <div class=" d-flex justify-content-center align-items-center">
-                  <img src="./assets/images/winners_frame.png" alt="" class="position-absolute mt-3" style="height: 200px; width: 200px; z-index: 3;" />
+                  <img src="./assets/images/winners_frame.png" alt="" class="position-absolute mt-3"
+                    style="height: 200px; width: 200px; z-index: 3;" />
                   <div class="d-flex justify-content-center mt-3 position-relative">
                     <img [src]="card.image" class="rounded-circle overflow-hidden"
                       style="height: 190px; width: 190px;  " alt="Student Image">
                   </div>
                 </div>
-               
-  
+
+
                 <!-- Card Body -->
                 <div class="card-body text-center border-2 border-top border-warning pt-4">
                   <div class="px-4 py-2 text-white fw-bold rounded shadow"
                     style="background: linear-gradient(45deg, #ff8c00, #ff4500); display: inline-block;">
                     <span>{{ card.name }}</span>
                   </div>
-                  <h3 class="mt-3 rounded py-1 px-0 "
-                    style="font-size: 1.5rem; min-height: 30px;">
+                  <h3 class="mt-3 rounded py-1 px-0 " style="font-size: 1.5rem; min-height: 30px;">
                     {{ card.classdetails ? card.classdetails : ' ' }}
                   </h3>
                   <h3 class="mt-3 rounded py-2 px-3 border border-danger shadow-sm"
@@ -109,7 +111,7 @@
       </owl-carousel-o>
     </div>
   </section>
-  
+
 
 
   <!-- <section id="card-carousel-section" class="py-5">
@@ -193,11 +195,11 @@
 
 
 
-  <div class="container-fluid milestone-section mb-3 counts">
-    <div class="row text-center align-items-center justify-content-center ">
+  <div class="container  mb-3 counts">
+    <div class="row  align-items-center justify-content-center ">
       <!-- Milestone 1 -->
-      <div class="col-lg-3 col-md-6 ">
-        <div class="p-4  rounded" style="background: none;">
+      <div class=" text-center  col-3 ">
+        <div class=" d-flex justify-content-center align-items-center flex-column p-2" style="background: none;">
           <span class="material-icons fs-1" style="color: brown;">school</span>
           <h3 class="mt-2 milestone_counter " data-end-value="15">15 </h3>
           <p class="fw-bold">Courses</p>
@@ -205,8 +207,8 @@
       </div>
 
       <!-- Milestone 2 -->
-      <div class="col-lg-3 col-md-6 ">
-        <div class="p-4 ">
+      <div class=" text-center mx-auto col-3">
+        <div class="d-flex justify-content-center align-items-center flex-column p-2 ">
           <span class="material-icons fs-1" style="color: brown;">people</span>
           <h3 class="mt-2 milestone_counter " data-end-value="7286">7286</h3>
           <p class="fw-bold">Students</p>
@@ -214,8 +216,8 @@
       </div>
 
       <!-- Milestone 3 -->
-      <div class="col-lg-3 col-md-6 ">
-        <div class="p-4  ">
+      <div class="text-center mx-auto col-3">
+        <div class="d-flex justify-content-center align-items-center flex-column p-2 ">
           <span class="material-icons fs-1" style="color: brown;">person</span>
           <h3 class="mt-2 milestone_counter  " data-end-value="25">25</h3>
           <p class="fw-bold">Teachers</p>
@@ -245,33 +247,34 @@
       </div>
 
 
-<div class="container-fluid">
-  <owl-carousel-o  #owlCarousel [options]="featureOptions">
-    <ng-container *ngFor="let feature of features; trackBy: trackByFn">
-      <ng-template carouselSlide>
-        <div class="card border-0 overflow-hidden justify-content-center align-items-center" style="background: none;">
-          <div class="d-flex justify-content-center align-items-center">
-            <img [src]="feature.image" class="rounded-circle img-fluid" alt="{{ feature.title }}"
-              style="width: 100px; height: 100px; object-fit: cover;">
-          </div>
-        </div>
-        <div class="card-body text-center mt-3 bg-white rounded-4" style="color: #1f0000;">
-          <h5 class="card-title  fs-6 fs-md-3 fs-lg-2">{{ feature.title }}</h5>
-        </div>
-      </ng-template>
-    </ng-container>
-  </owl-carousel-o>
-</div>
+      <div class="container-fluid">
+        <owl-carousel-o #owlCarousel [options]="featureOptions">
+          <ng-container *ngFor="let feature of features; trackBy: trackByFn">
+            <ng-template carouselSlide>
+              <div class="card border-0 overflow-hidden justify-content-center align-items-center"
+                style="background: none;">
+                <div class="d-flex justify-content-center align-items-center">
+                  <img [src]="feature.image" class="rounded-5 img-fluid" alt="{{ feature.title }}"
+                    style="width: 180px; height: 180px; object-fit: cover;">
+                </div>
+              </div>
+              <div class="card-body text-center mt-3 bg-white rounded-4" style="color: #1f0000;">
+                <h5 class="card-title  fs-6 fs-md-3 fs-lg-2">{{ feature.title }}</h5>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
 
 
-     
+
     </div>
   </section>
 
 
   <section>
     <app-course></app-course>
-    </section>
+  </section>
 
 
   <section class="team-section py-5">
@@ -286,25 +289,35 @@
         </div>
       </div>
 
-      <div class="row justify-content-center mt-1 ">
-        <div class="col-lg-4 col-md-6  mb-1" *ngFor="let director of directors">
-          <div class="card rounded-4 p-3 d-flex custom-card section">
+      <!-- Tabs for Small Screens -->
+      <!-- Styled Tabs for Small Screens -->
+      <ul class="nav nav-tabs border-0 d-md-none justify-content-between bg-primary border-rounded-pill custom-tabs"
+        id="directorTabs" role="tablist">
+        <li class="nav-item" role="presentation" *ngFor="let director of directors; let i = index">
+          <button class="nav-link fw-bold px-1 py-1" [ngClass]="{'active': i === 0}" id="tab-{{i}}" data-bs-toggle="tab"
+            [attr.data-bs-target]="'#content-' + i" type="button" role="tab">
+            {{ director.name }}
+          </button>
+        </li>
+      </ul>
 
+
+      <div class="tab-content d-md-none" id="directorTabContent">
+        <div *ngFor="let director of directors; let i = index" class="tab-pane fade"
+          [ngClass]="{'show active': i === 0}" [id]="'content-' + i" role="tabpanel">
+          <div class="card rounded-4 p-3 d-flex custom-card section mt-3">
             <div class="row align-items-center">
-              <!-- Image & Role -->
-              <div class="col-5 text-center" data-aos="slide-up">
+              <div class="col-6 text-center">
                 <img [src]="director.image" class="img-fluid rounded-3 w-100" [alt]="director.name">
-                <p class="fs-6  mt-1 p-1 fw-bold rounded-2" style="background-color: #1f0000;color:#f80 ; ">{{
-                  director.role }}</p>
+                <p class="fs-6 mt-1 p-1 fw-bold rounded-2" style="background-color: #1f0000; color:#f80;">
+                  {{ director.role }}
+                </p>
               </div>
-
-              <!-- Details -->
-              <div class="col-7 ps-1">
-                <h5 class="card-title text-decoration-underline fw-bold text-dark">{{ director.name }}</h5>
-                <p class="card-text text-danger fw-semibold fst-italic">{{ director.qualification }}</p>
-                <p class="card-text">{{ director.description }}</p>
-
-                <div class="social-icons ">
+              <div class="col-6 ps-1">
+                <h5 class="card-text text-decoration-underline mb-0 text-center text-dark">{{ director.name }}</h5>
+                <p class="card-text text-danger mb-0 text-center p-0 fw-semibold fst-italic">{{ director.qualification }}</p>
+                <p class="card-text mb-1">{{ director.description }}</p>
+                <div class="social-icons">
                   <a *ngIf="director.twitter" [href]="director.twitter" target="_blank"><i
                       class="bi bi-twitter"></i></a>
                   <a *ngIf="director.linkedin" [href]="director.linkedin" target="_blank"><i
@@ -318,10 +331,43 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
+
+      <!-- Card Layout for Larger Screens -->
+      <div class="row justify-content-center mt-1 d-none d-md-flex">
+        <div class="col-lg-4 col-md-6 mb-3" *ngFor="let director of directors">
+          <div class="card rounded-4 p-3 d-flex custom-card section">
+            <div class="row align-items-center">
+              <div class="col-5 text-center">
+                <img [src]="director.image" class="img-fluid rounded-3 w-100" [alt]="director.name">
+                <p class="fs-6 mt-1 p-1 fw-bold rounded-2" style="background-color: #1f0000; color:#f80;">
+                  {{ director.role }}
+                </p>
+              </div>
+              <div class="col-7 ps-1">
+                <h5 class="card-title text-decoration-underline fw-bold text-dark">{{ director.name }}</h5>
+                <p class="card-text text-danger fw-semibold fst-italic">{{ director.qualification }}</p>
+                <p class="card-text">{{ director.description }}</p>
+                <div class="social-icons">
+                  <a *ngIf="director.twitter" [href]="director.twitter" target="_blank"><i
+                      class="bi bi-twitter"></i></a>
+                  <a *ngIf="director.linkedin" [href]="director.linkedin" target="_blank"><i
+                      class="bi bi-linkedin"></i></a>
+                  <a *ngIf="director.youtube" [href]="director.youtube" target="_blank"><i
+                      class="bi bi-youtube"></i></a>
+                  <a *ngIf="director.facebook" [href]="director.facebook" target="_blank"><i
+                      class="bi bi-facebook"></i></a>
+                  <a *ngIf="director.instagram" [href]="director.instagram" target="_blank"><i
+                      class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -329,32 +375,57 @@
 
 
 
+  <section class="news-events py-5">
+    <div class="container section-title">
+      <h2 class="text-center fw-bold">Latest News & Events</h2>
+      <p class="text-center text-muted mb-4">Stay updated with our latest happenings</p>
 
-<section class="news-events py-5">
-  <div class="container section-title">
-    <h2 class="text-center fw-bold">Latest News & Events</h2>
-    <p class="text-center text-muted mb-4">Stay updated with our latest happenings</p>
+      <!-- Tabs for Small Screens -->
+      <ul class="nav nav-tabs border-0 d-md-none justify-content-center custom-tabs" id="newsTabs" role="tablist">
+        <li class="nav-item" role="presentation" *ngFor="let event of newsEvents; let i = index">
+          <button class="nav-link fw-bold" [ngClass]="{'active': i === 0}" id="tab-{{i}}" data-bs-toggle="tab"
+            [attr.data-bs-target]="'#news-content-' + i" type="button" role="tab">
+            {{ event.category }}
+          </button>
+        </li>
+      </ul>
 
-    <div class="row g-4 align-items-stretch">
-      <div class="col-md-4 rounded-4" *ngFor="let event of newsEvents">
-        <div class="news-card h-100 w-100 rounded-4 shadow-lg ">
-          <img [src]="event.image" class="img-fluid  card-img-top h-50" alt="News">
-          <div class="p-3 text-truncate">
-            <span class="badge bg-primary" >{{ event.category }}</span>
-            <h5 class="mt-2 fw-bold">{{ event.title }}</h5>
-            <p class="text-muted text-wrap small">{{ event.description }}</p>
-            <a [href]="event.link" class="fw-bold" >Read More <i class="bi bi-arrow-right"></i></a>
+      <div class="tab-content d-md-none" id="newsTabContent">
+        <div *ngFor="let event of newsEvents; let i = index" class="tab-pane fade" [ngClass]="{'show active': i === 0}"
+          [id]="'news-content-' + i" role="tabpanel">
+          <div class="news-card h-100 w-100 rounded-4 shadow-lg p-3 mt-3">
+            <img [src]="event.image" class="img-fluid rounded-3 w-100" alt="News">
+            <div class="p-3">
+              <span class="badge bg-primary">{{ event.category }}</span>
+              <h5 class="mt-2 fw-bold">{{ event.title }}</h5>
+              <p class="text-muted">{{ event.description }}</p>
+              <a [href]="event.link" class="fw-bold">Read More <i class="bi bi-arrow-right"></i></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-  
- 
-  
-  
+      <!-- Card Layout for Larger Screens -->
+      <div class="row g-4 align-items-stretch d-none d-md-flex">
+        <div class="col-md-4" *ngFor="let event of newsEvents">
+          <div class="news-card h-100 w-100 rounded-4 shadow-lg">
+            <img [src]="event.image" class="img-fluid card-img-top rounded-top" alt="News">
+            <div class="p-3">
+              <span class="badge bg-primary">{{ event.category }}</span>
+              <h5 class="mt-2 fw-bold">{{ event.title }}</h5>
+              <p class="text-muted small">{{ event.description }}</p>
+              <a [href]="event.link" class="fw-bold">Read More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
 
 
 

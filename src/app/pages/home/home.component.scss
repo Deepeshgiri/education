@@ -161,3 +161,34 @@ border: 1px solid rgba(31, 0, 0, 0.35);
   background-position: center;
   background-repeat: no-repeat;
 }
+
+
+
+.custom-tabs .nav-link {
+  border: 2px solid transparent;
+  border-radius: 30px; /* Rounded buttons */
+  background-color: #f8f9fa; /* Light gray */
+  color: #333;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  margin: 5px;
+}
+
+.custom-tabs .nav-link:hover {
+  background-color: rgba(255, 165, 0, 0.2); /* Light orange tint */
+  color: #ff8c00; /* Orange */
+}
+
+.custom-tabs .nav-link.active {
+  background-color: #ff8c00; /* Orange */
+  color: white;
+  border-color: #ff8c00;
+  font-weight: bold;
+}
+
+.custom-tabs  {
+ 
+ border-radius: 25px;
+}
+
+

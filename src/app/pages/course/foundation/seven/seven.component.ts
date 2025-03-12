@@ -29,18 +29,31 @@ export class SevenComponent {
   ];
   
 
-  highlights = [
-    { icon: "bi-book-half", text: "Complete coverage of CBSE/ICSE Class 7 syllabus", color: "primary" },
-    { icon: "bi-lightbulb", text: "Develop mental aptitude for competitive exams", color: "success" },
-    { icon: "bi-bar-chart-line", text: "Learn through graphical and 3D visualization", color: "danger" },
-    { icon: "bi-bookmark-star", text: "Build strong conceptual understanding", color: "warning" },
-    { icon: "bi-list-check", text: "Practice with MCQs, comprehensions, and more", color: "info" },
-    { icon: "bi-trophy", text: "Prepare for Olympiads like NSO, IMO, and NSEJS", color: "primary" },
-    { icon: "bi-arrow-up-right-circle", text: "Lay a strong foundation for higher studies", color: "danger" },
-    { icon: "bi-mic", text: "Enhance English speaking and personality development", color: "success" }
-  ];
+// For "Why Choose This Course?" Section (Class 7)
+courseHighlights = [
+  { icon: "bi-pencil-square", text: "Expert-curated study materials and notes", color: "primary" },
+  { icon: "bi-tv", text: "Interactive lectures with engaging experiments and activities", color: "success" },
+  { icon: "bi-list-task", text: "Regular assignments and practice tests", color: "danger" },
+  { icon: "bi-person-video3", text: "Regular doubt-solving sessions with subject experts", color: "warning" },
+  { icon: "bi-clock-history", text: "learning with structured modules", color: "info" },
+  { icon: "bi-journal-check", text: "Comprehensive revision schedule and mock tests", color: "primary" },
+  { icon: "bi-stars", text: "Success strategies from top educators", color: "danger" },
+  { icon: "bi-people", text: "Collaborative learning with peer discussions", color: "success" },
+  { icon: "bi-person", text: "Extra ordinary personal attention on students", color: "primary" },
+  { icon: "bi-stars", text: "Regular parent teacher interaction for betterment of student", color: "primary"  }
+];
 
 
+eligibilityHighlights = [
+  { icon: "bi-book-half", text: "Complete coverage of CBSE/ICSE Class 8 syllabus", color: "primary" },
+  { icon: "bi-lightbulb", text: "Sharpen problem-solving skills for competitive exams", color: "success" },
+  { icon: "bi-brain", text: "Develop analytical and critical thinking abilities", color: "danger" },
+  { icon: "bi-person-check", text: "Boost confidence in tackling challenging subjects", color: "warning" },
+  { icon: "bi-globe", text: "Improve general knowledge and awareness", color: "info" },
+  { icon: "bi-bar-chart-line", text: "Understand concepts through visual aids and experiments", color: "primary" },
+  { icon: "bi-trophy", text: "Get ready for IMO, ISA, NSTSE, SOF, Olympiads, and other competitive exams", color: "danger" },
+  { icon: "bi-mic", text: "Enhance communication and presentation skills", color: "success" }
+];
 
 
   @HostListener('window:scroll', ['$event'])
