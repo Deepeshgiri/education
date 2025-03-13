@@ -1,12 +1,10 @@
-
-
 .top-navbar {
-  
+
   .navbar-light {
-    
+
     .navbar-nav {
       .nav-link {
-                font-size: 16px;
+        font-size: 16px;
         font-weight: 700;
         padding: 6px 0;
         position: relative;
@@ -43,6 +41,7 @@
         }
 
         .nav-link {
+
           &::before,
           &::after {
             position: absolute;
@@ -87,10 +86,10 @@
     }
 
 
-    
+
     .dropdown-menu {
       box-shadow: 0 2px 12px rgb(78, 5, 5);
-     
+
       border-radius: 15px;
 
       margin: 0;
@@ -98,7 +97,7 @@
 
       .dropdown-item {
         padding-left: 10px;
-       
+
 
         &:hover {
           background: #eea412;
@@ -110,7 +109,7 @@
 
   .navbar-toggler {
     border: 0;
-    
+
     background: #1f0000;
     padding: 0;
 
@@ -125,33 +124,34 @@
     }
   }
 }
-.first:hover{
-    .second {
-      top: 50;
-      left: 50%;
-      margin-left: 0.1rem;
-      display: block;
-    }
-  
-  
-  
+
+.first:hover {
+  .second {
+    top: 50;
+    left: 50%;
+    margin-left: 0.1rem;
+    display: block;
+  }
+
+
+
 }
 
 
 /* Multi-Level Dropdown */
 .dropdown-submenu {
   position: relative;
-  
+
 
   .dropdown-menu {
     top: 0;
     left: 100%;
     margin-left: 0.1rem;
     display: none;
-   
+
   }
 
-  &:hover > .dropdown-menu {
+  &:hover>.dropdown-menu {
     display: block;
     padding: 0;
     margin: 0;
@@ -160,11 +160,11 @@
 
 /* 🖥️ Desktop: Show dropdown on hover */
 @media (min-width: 992px) {
-  .dropdown:hover > .dropdown-menu {
+  .dropdown:hover>.dropdown-menu {
     display: block;
   }
 
-  .dropdown-submenu:hover > .dropdown-menu {
+  .dropdown-submenu:hover>.dropdown-menu {
     display: block;
     position: absolute;
     left: 100%;
@@ -203,7 +203,8 @@
 
 /* Mobile Offcanvas Menu Styles */
 .offcanvas {
-  width: 280px; /* Adjust width as needed */
+  width: 280px;
+  /* Adjust width as needed */
   background-color: #1f0000;
   color: #f80;
 }
@@ -216,10 +217,6 @@
 .offcanvas-title {
   font-size: 1.25rem;
   font-weight: 600;
-}
-
-.offcanvas.nav-item.active{
-  color: aqua;
 }
 
 

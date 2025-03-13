@@ -103,7 +103,7 @@ $danger: #f80;
 
 .section {
 
-background:#F4CF9E;
+background:#f4cf9e61;
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(1px);
@@ -168,14 +168,14 @@ border: 1px solid rgba(31, 0, 0, 0.35);
   border: 2px solid transparent;
   border-radius: 30px; /* Rounded buttons */
   background-color: #f8f9fa; /* Light gray */
-  color: #333;
+  
   font-size: 1rem;
   transition: all 0.3s ease-in-out;
-  margin: 5px;
+  
 }
 
 .custom-tabs .nav-link:hover {
-  background-color: rgba(255, 165, 0, 0.2); /* Light orange tint */
+  background-color: rgba(255, 166, 0, 0); /* Light orange tint */
   color: #ff8c00; /* Orange */
 }
 
@@ -184,6 +184,7 @@ border: 1px solid rgba(31, 0, 0, 0.35);
   color: white;
   border-color: #ff8c00;
   font-weight: bold;
+  opacity: 0.9;
 }
 
 .custom-tabs  {
@@ -191,4 +192,11 @@ border: 1px solid rgba(31, 0, 0, 0.35);
  border-radius: 25px;
 }
 
+.bi-caret-down-fill{
+  color: #f80;
+}
 
+.accordion-button:not(.collapsed) {
+  background-color: white !important;
+  color: black !important;
+}

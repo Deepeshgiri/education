@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   testimonials: any = [];
   features: any = [];
   timeLeft: string = '';
+  activeTabIndex: number =0;
 
   constructor(private coreService: CoreService) {
   }
@@ -214,22 +215,84 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ];
 
 
-  newsEvents = [
+  announcements = [
     {
-      title: 'Upcoming Seminar on AI in Education',
-      description: 'Join us for an insightful discussion on AI-driven learning methodologies.',
-      image: './assets/images/medical1.png',
-      category: 'news and events',
-
-      link: '#'
+      title: "Class 10th Pre-Board Exams Schedule Released",
+      date: "2025-03-15",
+      description: "Pre-board exams for class 10th will begin from April 1st, 2025. Students are advised to check the detailed schedule on the student portal."
     },
     {
-      title: 'Annual Science Fair - Register Now!',
-      description: 'Don\'t miss our grand Science Fair with exciting projects and prizes.',
-      image: './assets/images/foundation1.png',
-      category: 'Announcements',
-      link: '#'
+      title: "IIT-JEE/NEET 2025 Crash Course Enrollment Open",
+      date: "2025-03-12",
+      description: "Our intensive crash course for JEE and NEET aspirants is now open for enrollment. Limited seats available!"
+    },
+    {
+      title: "New Study Material for NEET & JEE Released",
+      date: "2025-03-10",
+      description: "Updated study materials and practice tests for IIT-JEE and NEET are now available in the online portal."
+    },
+    {
+      title: "Mathematics Olympiad Registration Open",
+      date: "2025-03-08",
+      description: "Students from classes 7th to 10th can now register for the upcoming Mathematics Olympiad. Registration closes on March 20th."
+    },
+    {
+      title: "Doubt-Solving Sessions for Class 11 & 12",
+      date: "2025-03-05",
+      description: "Extra doubt-clearing sessions for Physics, Chemistry, and Mathematics/Biology will be held every Saturday from 3 PM to 5 PM."
+    },
+    {
+      title: "Scholarships for NEET & JEE Aspirants",
+      date: "2025-03-02",
+      description: "Top-performing students in our internal tests will be eligible for scholarships covering up to 50% of their tuition fees."
     }
-  
   ];
+  
+
+  newsEvents = [
+    {
+      title: "National Science Quiz for Classes 7-10",
+      date: "2025-04-15",
+      description: "A nationwide Science Quiz competition will be held for students of classes 7 to 10. Prepare and register now!",
+      location: "Main Auditorium"
+    },
+    {
+      title: "NEET Mock Test Series Begins",
+      date: "2025-04-10",
+      description: "A series of full-length NEET mock tests will be conducted every Sunday to help students improve time management and accuracy.",
+      location: "Online & Offline"
+    },
+    {
+      title: "IIT-JEE Advanced Level Workshop",
+      date: "2025-04-05",
+      description: "A special workshop for IIT-JEE aspirants to learn advanced problem-solving techniques in Physics and Mathematics.",
+      location: "Room 203, Academic Block"
+    },
+    {
+      title: "Career Guidance Seminar for Class 10 & 12",
+      date: "2025-03-28",
+      description: "Experts from top universities will guide students on career paths after 10th and 12th, including engineering, medicine, and research opportunities.",
+      location: "Seminar Hall"
+    },
+    {
+      title: "Science Fair 2025 – Show Your Innovation",
+      date: "2025-03-22",
+      description: "Students from classes 7-12 can participate in the Annual Science Fair and showcase their innovative projects.",
+      location: "Science Lab, Block A"
+    },
+    {
+      title: "Speed Test Challenge – JEE & NEET",
+      date: "2025-03-18",
+      description: "Compete with fellow aspirants in a rapid-fire test series to enhance speed and accuracy in competitive exams.",
+      location: "Test Hall 1, Academic Block"
+    }
+  ];
+  
+
+  setActiveTab(index: number) {
+    this.activeTabIndex = index;
+  }
+  
+  
+
 }
