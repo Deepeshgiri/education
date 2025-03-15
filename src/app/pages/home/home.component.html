@@ -405,54 +405,128 @@
       <!-- Tabs for Small Screens -->
 
 
-      <div>
-        <ul class="nav nav-tabs border-0 d-md-none justify-content-center custom-tabs" id="newsTabs" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link nav fw-bold" id="tab-news&events" data-bs-toggle="tab" type="button" role="tab">
+
+
+
+
+
+
+      <div class="container">
+        <!-- Tabs for Small Screens -->
+        <ul class="nav nav-tabs custom-tabs bg-opacity-75 d-flex justify-content-around p-2 bg-primary  d-md-none " id="newsTab" role="tablist">
+          <li class="nav-item  " role="presentation">
+            <button class="nav-link active text-primary " id="news-tab" data-bs-toggle="tab" data-bs-target="#news" type="button"
+              role="tab" aria-controls="news" aria-selected="true">
               News & Events
             </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link nav fw-bold" id="tab-announcements" data-bs-toggle="tab" type="button" role="tab">
+            <button class="nav-link text-primary" id="announcements-tab" data-bs-toggle="tab" data-bs-target="#announcements"
+              type="button" role="tab" aria-controls="announcements" aria-selected="false">
               Announcements
             </button>
           </li>
         </ul>
-      </div>
 
-      <div class=" d-md-none" id="newsTabContent">
+        <div class="tab-content d-md-none mt-2" id="newsTabContent">
+          <!-- News Tab Content -->
+          <div class="tab-pane fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
+            <div class="accordion" id="accordionNews">
+              <div class="accordion-item" *ngFor="let event of newsEvents; let i = index">
+                <h3 class="accordion-header" [id]="'heading-news-' + i">
+                  <button class="accordion-button bg-none position-relative" type="button" data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#collapse-news-' + i" [attr.aria-controls]="'collapse-news-' + i">
+                    <div class="d-flex align-items-center">
+                      <p class="p-0 m-0 fw-bold">{{ event.title }}<span
+                          class="text-danger fst-italic ms-2 fs-6">new</span></p>
 
-        <div class="accordion" id="accordionExampl">
-          <div class="accordion-item" *ngFor="let event of newsEvents; let i = index">
-            <h3 class="accordion-header" [id]="'heading-' + i">
-              <button class="accordion-button bg-none position-relative " type="button" data-bs-toggle="collapse"
-                [attr.data-bs-target]="'#collapse-' + i" aria-expanded="{ i === 0 ? 'true' : 'false' }"
-                [attr.aria-controls]="'collapse-' + i">
-                <p class="p-0 m-0 fw-bold">{{ event.title }}</p> <span class="position-absolute  start-75 badge rounded-pill bg-danger">  new</span>
-              </button>
-            </h3>
-            <div [id]="'collapse-' + i" class="accordion-collapse collapse" [ngClass]="{'show': i === 0}"
-              [attr.aria-labelledby]="'heading-' + i" data-bs-parent="#accordionExampl">
-              <div class="accordion-body">
-                {{ event.description }}
+                    </div>
+                  </button>
+                </h3>
+                <div [id]="'collapse-news-' + i" class="accordion-collapse collapse"
+                  [attr.aria-labelledby]="'heading-news-' + i" data-bs-parent="#accordionNews">
+                  <div class="accordion-body">
+                    {{ event.description }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Announcements Tab Content -->
+          <div class="tab-pane fade" id="announcements" role="tabpanel" aria-labelledby="announcements-tab">
+            <div class="accordion" id="accordionAnnouncements">
+              <div class="accordion-item" *ngFor="let event of announcements; let i = index">
+                <h3 class="accordion-header" [id]="'heading-announcements-' + i">
+                  <button class="accordion-button bg-none position-relative" type="button" data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#collapse-announcements-' + i"
+                    [attr.aria-controls]="'collapse-announcements-' + i">
+                    <div class="d-flex align-items-center">
+                      <p class="p-0 m-0 fw-bold">{{ event.title }} <span
+                          class="text-danger fst-italic ms-2 fs-6">new</span></p>
+
+                    </div>
+                  </button>
+                </h3>
+                <div [id]="'collapse-announcements-' + i" class="accordion-collapse collapse"
+                  [attr.aria-labelledby]="'heading-announcements-' + i" data-bs-parent="#accordionAnnouncements">
+                  <div class="accordion-body">
+                    {{ event.description }}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Accordion for Larger Screens -->
+        <div class="row d-none d-md-flex justify-content-center">
+          <div class="col-md-6">
+            <h2 class="text-center">News and Events</h2>
+            <div class="accordion" id="accordionExampleNews">
+              <div class="accordion-item" *ngFor="let event of newsEvents; let i = index">
+                <h3 class="accordion-header" [id]="'heading-lg-news-' + i">
+                  <button class="accordion-button bg-none position-relative" type="button" data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#collapse-lg-news-' + i" [attr.aria-controls]="'collapse-lg-news-' + i">
+                    <div class="d-flex align-items-center">
+                      <p class="p-0 m-0 fw-bold">{{ event.title }} <span
+                          class="text-danger fst-italic ms-2 fs-6">new</span>
+                      </p>
+                    </div>
+                  </button>
+                </h3>
+                <div [id]="'collapse-lg-news-' + i" class="accordion-collapse collapse"
+                  [attr.aria-labelledby]="'heading-lg-news-' + i" data-bs-parent="#accordionExampleNews">
+                  <div class="accordion-body">
+                    {{ event.description }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-
-      </div>
-
-      <!-- Card Layout for Larger Screens -->
-      <div class="row g-4 align-items-stretch d-none d-md-flex">
-        <div class="col-md-4" *ngFor="let event of newsEvents">
-          <div class="news-card h-100 w-100 rounded-4 shadow-lg">
-            <div class="p-3">
-              <span class="badge bg-primary">{{ event.title }}</span>
-              <h5 class="mt-2 fw-bold">{{ event.title }}</h5>
-              <p class="text-muted small">{{ event.description }}</p>
-              <a [href]="event.title" class="fw-bold">Read More <i class="bi bi-arrow-right"></i></a>
+          <div class="col-md-6">
+            <h2 class="text-center">Announcements</h2>
+            <div class="accordion" id="accordionExampleAnnouncements">
+              <div class="accordion-item" *ngFor="let event of announcements; let i = index">
+                <h3 class="accordion-header" [id]="'heading-lg-announcements-' + i">
+                  <button class="accordion-button bg-none position-relative" type="button" data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#collapse-lg-announcements-' + i"
+                    [attr.aria-controls]="'collapse-lg-announcements-' + i">
+                    <div class="d-flex align-items-center">
+                      <p class="p-0 m-0 fw-bold">{{ event.title }} <span class="text-danger fst-italic ms-2 fs-6">new</span></p>
+                      
+                    </div>
+                  </button>
+                </h3>
+                <div [id]="'collapse-lg-announcements-' + i" class="accordion-collapse collapse"
+                  [attr.aria-labelledby]="'heading-lg-announcements-' + i"
+                  data-bs-parent="#accordionExampleAnnouncements">
+                  <div class="accordion-body">
+                    {{ event.description }}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -469,67 +543,74 @@
 
 
   <div class="container-fluid my-5 tes">
-    <div class="row g-2">
-      <div class="row">
-        <div class="col-12 text-center section-title">
-          <h2 class="fw-bold stext-primary">Testimonials</h2>
-          <p class="text-muted">
-            What people says about us?
-          </p>
-        </div>
+    <div class="row">
+      <div class="col-12 text-center section-title">
+        <h2 class="fw-bold stext-primary">Testimonials</h2>
+        <p class="text-muted">What people say about us?</p>
       </div>
-      <!-- Student Testimonials -->
-      <div class="col-md-6 p-3">
-        <div class="section-title text-center mb-4 position-relative">
-          <h2>Student's <span class="text-primary">Testimonials</span></h2>
-        </div>
-        <div class=" position-relative">
-          <div id="studentCarousel" class="carousel slide" data-bs-ride="carousel">
+    </div>
+  
+    <!-- Tabs for Small Screens -->
+    <ul class="nav  custom-tabs d-flex justify-content-around bg-primary  p-2 bg-opacity-75 mb-2 d-md-none" id="testimonialTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active text-primary " id="student-tab" data-bs-toggle="tab" data-bs-target="#studentTestimonial"
+          type="button" role="tab" aria-controls="studentTestimonial" aria-selected="true">
+          Students 
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-primary " id="parent-tab" data-bs-toggle="tab" data-bs-target="#parentTestimonial"
+          type="button" role="tab" aria-controls="parentTestimonial" aria-selected="false">
+          Parents 
+        </button>
+      </li>
+    </ul>
+  
+    <div class="tab-content d-md-none" id="testimonialTabContent">
+      <!-- Student Testimonials (Small Screens) -->
+      <div class="tab-pane fade show active" id="studentTestimonial" role="tabpanel" aria-labelledby="student-tab">
+        <div class="testimonial-container position-relative">
+          <div id="studentCarouselSmall" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div *ngFor="let student of testimonials.students; let i = index" class="carousel-item"
                 [class.active]="i === 0">
-                <div class="card shadow-sm border-2 border-warning text-center p-0 rounded-4">
+                <div class="card shadow-sm border-warning border-2 text-center p-0 rounded-4">
                   <img [src]="student.image || 'assets/images/male.png'" [alt]="student.name"
-                    class="rounded-circle mx-auto d-block border border-2 border-primary mt-3 shadow-sm" width="140"
+                    class="rounded-circle mx-auto border-2 border-primary d-block border mt-3 shadow-sm" width="140"
                     height="140" onerror="this.src='assets/images/male.png'" style="margin-bottom: -40px; z-index: 2;">
                   <div class="card-body">
-                    <h5 class="card-title text-danger mt-5 fw-bold text-decoration-underline">{{ student.name }}</h5>
+                    <h5 class="card-title text-danger mt-5 text-decoration-underline fw-bold">{{ student.name }}</h5>
                     <p class="card-text p-5">
-                      <i class="bi bi-quote quote-icon-top fs-1 ps-3 "></i>
-                      {{ student.description }}
-                      <i class="bi bi-quote quote-icon-bottom fs-1  px-3 "></i>
+                      <i class="bi bi-quote quote-icon-top fs-1 ps-3"></i>
+                      <span>{{ student.description }}</span>
+                      <i class="bi bi-quote quote-icon-bottom fs-1 px-3"></i>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- Custom Navigation -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#studentCarousel" data-bs-slide="prev">
-              <i class="bi bi-chevron-left text-primary fs-2 "></i>
+            <button class="carousel-control-prev" type="button" data-bs-target="#studentCarouselSmall" data-bs-slide="prev">
+              <i class="bi bi-chevron-left text-primary fs-2"></i>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#studentCarousel" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#studentCarouselSmall" data-bs-slide="next">
               <i class="bi bi-chevron-right text-primary fs-2"></i>
             </button>
           </div>
         </div>
       </div>
-
-      <!-- Parent Testimonials -->
-      <div class="col-md-6 p-3 ">
-        <div class="section-title text-center mb-4">
-          <h2>Parent's <span class="text-primary">Testimonials</span></h2>
-        </div>
+  
+      <!-- Parent Testimonials (Small Screens) -->
+      <div class="tab-pane fade" id="parentTestimonial" role="tabpanel" aria-labelledby="parent-tab">
         <div class="testimonial-container position-relative">
-          <div id="parentCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div id="parentCarouselSmall" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div *ngFor="let parent of testimonials.parents; let i = index" class="carousel-item"
                 [class.active]="i === 0">
                 <div class="card shadow-sm border-warning border-2 text-center p-0 rounded-4">
                   <img [src]="parent.image || 'assets/images/male.png'" [alt]="parent.name"
-                    class="rounded-circle mx-auto border-2 border-primary d-block border mt-3  shadow-sm" width="140"
+                    class="rounded-circle mx-auto border-2 border-primary d-block border mt-3 shadow-sm" width="140"
                     height="140" onerror="this.src='assets/images/male.png'" style="margin-bottom: -40px; z-index: 2;">
-                  <div class="card-body ">
+                  <div class="card-body">
                     <h5 class="card-title text-danger mt-5 text-decoration-underline fw-bold">{{ parent.name }}</h5>
                     <p class="card-text p-5">
                       <i class="bi bi-quote quote-icon-top fs-1 ps-3"></i>
@@ -540,20 +621,92 @@
                 </div>
               </div>
             </div>
-
-            <!-- Custom Navigation -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#parentCarousel" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#parentCarouselSmall" data-bs-slide="prev">
               <i class="bi bi-chevron-left text-danger fs-2"></i>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#parentCarousel" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#parentCarouselSmall" data-bs-slide="next">
               <i class="bi bi-chevron-right text-danger fs-2"></i>
             </button>
           </div>
         </div>
       </div>
     </div>
+  
+    <!-- Side-by-Side Testimonials for Large Screens -->
+    <div class="row g-2 d-none d-md-flex">
+      <!-- Student Testimonials -->
+      <div class="col-md-6 p-3">
+        <div class="section-title text-center mb-4 position-relative">
+          <h2>Student's <span class="text-primary">Testimonials</span></h2>
+        </div>
+        <div class="testimonial-container position-relative">
+          <div id="studentCarouselLarge" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div *ngFor="let student of testimonials.students; let i = index" class="carousel-item"
+                [class.active]="i === 0">
+                <div class="card shadow-sm border-warning border-2 text-center p-0 rounded-4">
+                  <img [src]="student.image || 'assets/images/male.png'" [alt]="student.name"
+                    class="rounded-circle mx-auto border-2 border-primary d-block border mt-3 shadow-sm" width="140"
+                    height="140" onerror="this.src='assets/images/male.png'" style="margin-bottom: -40px; z-index: 2;">
+                  <div class="card-body">
+                    <h5 class="card-title text-danger mt-5 text-decoration-underline fw-bold">{{ student.name }}</h5>
+                    <p class="card-text p-5">
+                      <i class="bi bi-quote quote-icon-top fs-1 ps-3"></i>
+                      <span>{{ student.description }}</span>
+                      <i class="bi bi-quote quote-icon-bottom fs-1 px-3"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#studentCarouselLarge" data-bs-slide="prev">
+              <i class="bi bi-chevron-left text-primary fs-2"></i>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#studentCarouselLarge" data-bs-slide="next">
+              <i class="bi bi-chevron-right text-primary fs-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Parent Testimonials -->
+      <div class="col-md-6 p-3 ">
+        <div class="section-title text-center mb-4">
+          <h2>Parent's <span class="text-primary">Testimonials</span></h2>
+        </div>
+        <div class="testimonial-container position-relative">
+          <div id="studentCarouselLarge" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div *ngFor="let parent of testimonials.parents; let i = index" class="carousel-item"
+                [class.active]="i === 0">
+                <div class="card shadow-sm border-warning border-2 text-center p-0 rounded-4">
+                  <img [src]="parent.image || 'assets/images/male.png'" [alt]="parent.name"
+                    class="rounded-circle mx-auto border-2 border-primary d-block border mt-3 shadow-sm" width="140"
+                    height="140" onerror="this.src='assets/images/male.png'" style="margin-bottom: -40px; z-index: 2;">
+                  <div class="card-body overflow-y">
+                    <h5 class="card-title text-danger mt-5 text-decoration-underline fw-bold">{{ parent.name }}</h5>
+                    <p class="card-text p-5">
+                      <i class="bi bi-quote quote-icon-top fs-1 ps-3"></i>
+                      <span>{{ parent.description }}</span>
+                      <i class="bi bi-quote quote-icon-bottom fs-1 px-3"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#studentCarouselLarge" data-bs-slide="prev">
+              <i class="bi bi-chevron-left text-primary fs-2"></i>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#studentCarouselLarge" data-bs-slide="next">
+              <i class="bi bi-chevron-right text-primary fs-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
   </div>
-
+  
 
 
 

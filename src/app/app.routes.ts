@@ -17,6 +17,9 @@ import { EnggtwelveComponent } from './pages/course/engineering/enggtwelve/enggt
 import { MedtwelveComponent } from './pages/course/medical/medtwelve/medtwelve.component';
 import { MedelevenComponent } from './pages/course/medical/medeleven/medeleven.component';
 import { PsatComponent } from './pages/exam/psat/psat.component';
+import { PrivacypolicyComponent } from './pages/generalpages/privacypolicy/privacypolicy.component';
+import { RefundcancellationComponent } from './pages/generalpages/refundcancellation/refundcancellation.component';
+import { TermsconditionComponent } from './pages/generalpages/termscondition/termscondition.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -43,7 +46,12 @@ export const routes: Routes = [
 
 
 
-{path:'exam/psat/about', component:PsatComponent}
+{path:'exam/psat/about', component:PsatComponent},
+
+
+{path:'privacy-policy' , component:PrivacypolicyComponent},
+{path:'refund-cancellation', component:RefundcancellationComponent},
+{path:'terms-and-condition', component:TermsconditionComponent}
 
 
 ];

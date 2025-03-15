@@ -200,3 +200,49 @@ border: 1px solid rgba(31, 0, 0, 0.35);
   background-color: white !important;
   color: black !important;
 }
+
+
+
+/* Tab buttons */
+.tab-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+
+  background: transparent;
+  color: #333;
+  width: 100%;
+}
+
+/* Active tab */
+.tab-btn.active {
+  background: rgba(255, 165, 0, 0.2);
+  box-shadow: 0px 4px 8px rgba(255, 165, 0, 0.2);
+  border-bottom: 3px solid orange;
+}
+
+
+
+/* Separator */
+.nav-separator {
+  width: 1px;
+  background: #ccc;
+  height: 80px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .tab-btn {
+      padding: 8px;
+      font-size: 14px;
+  }
+  .nav-separator {
+      height: 70px;
+      color: #1f0000;
+      background-color: #1f0000;
+  }
+}
