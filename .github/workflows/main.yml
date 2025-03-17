@@ -31,4 +31,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           local-dir: dist/education/
-          server-dir: /public_html/sandbox.eduotics.in/
+          server-dir: /
