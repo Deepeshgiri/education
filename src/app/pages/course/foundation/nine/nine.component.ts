@@ -22,7 +22,6 @@ export class NineComponent {
   courseFeatures = [
     { icon: "video_library", title: "Engaging Video Lectures", description: "High-quality, interactive video lessons to make learning fun and effective.", color: "primary" },
     { icon: "groups", title: "Interactive Classes", description: "Join  sessions with expert mentors and peers for real-time learning.", color: "danger" },
-    { icon: "schedule", title: "Flexible Learning", description: "Study at your own pace with 24/7 access to course materials.", color: "warning" },
     { icon: "auto_stories", title: "Comprehensive Resources", description: "Access detailed notes, practice questions, and reference materials.", color: "info" },
     { icon: "support_agent", title: "Personalized Support", description: "Get one-on-one doubt-solving sessions with experienced mentors.", color: "success" },
     { icon: "menu_book", title: "Extensive Library", description: "Explore a vast collection of books, notes, and study resources.", color: "secondary" }
