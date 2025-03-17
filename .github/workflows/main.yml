@@ -31,4 +31,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           local-dir: dist/education/
-          server-dir: /public_html/classroom/dist
+          server-dir: /public_html/classroom/dist/
