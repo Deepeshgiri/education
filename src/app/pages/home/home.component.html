@@ -575,7 +575,7 @@
               <div *ngFor="let student of testimonials.students; let i = index" class="carousel-item"
                 [class.active]="i === 0">
                 <div class="card shadow-sm border-warning border-2 text-center p-0 rounded-4">
-                  <img [src]="student.image || 'assets/images/male.png'" [alt]="student.name"
+                  <img [src]="student.image || './assets/images/male.png'" [alt]="student.name"
                     class="rounded-circle mx-auto border-2 border-primary d-block border mt-3 shadow-sm" width="140"
                     height="140" onerror="this.src='assets/images/male.png'" style="margin-bottom: -40px; z-index: 2;">
                   <div class="card-body">
@@ -607,9 +607,9 @@
               <div *ngFor="let parent of testimonials.parents; let i = index" class="carousel-item"
                 [class.active]="i === 0">
                 <div class="card shadow-sm border-warning border-2 text-center p-0 rounded-4">
-                  <img [src]="parent.image || 'assets/images/male.png'" [alt]="parent.name"
+                  <img [src]="parent.image || './assets/images/male.png'" [alt]="parent.name"
                     class="rounded-circle mx-auto border-2 border-primary d-block border mt-3 shadow-sm" width="140"
-                    height="140" onerror="this.src='assets/images/male.png'" style="margin-bottom: -40px; z-index: 2;">
+                    height="140" onerror="this.src='./assets/images/male.png'" style="margin-bottom: -40px; z-index: 2;">
                   <div class="card-body">
                     <h5 class="card-title text-danger mt-5 text-decoration-underline fw-bold">{{ parent.name }}</h5>
                     <p class="card-text p-5">
@@ -645,9 +645,9 @@
               <div *ngFor="let student of testimonials.students; let i = index" class="carousel-item"
                 [class.active]="i === 0">
                 <div class="card shadow-sm border-warning border-2 text-center p-0 rounded-4">
-                  <img [src]="student.image || 'assets/images/male.png'" [alt]="student.name"
+                  <img [src]="student.image || './assets/images/male.png'" [alt]="student.name"
                     class="rounded-circle mx-auto border-2 border-primary d-block border mt-3 shadow-sm" width="140"
-                    height="140" onerror="this.src='assets/images/male.png'" style="margin-bottom: -40px; z-index: 2;">
+                    height="140" onerror="this.src='./assets/images/male.png'" style="margin-bottom: -40px; z-index: 2;">
                   <div class="card-body">
                     <h5 class="card-title text-danger mt-5 text-decoration-underline fw-bold">{{ student.name }}</h5>
                     <p class="card-text p-5">
@@ -680,9 +680,9 @@
               <div *ngFor="let parent of testimonials.parents; let i = index" class="carousel-item"
                 [class.active]="i === 0">
                 <div class="card shadow-sm border-warning border-2 text-center p-0 rounded-4">
-                  <img [src]="parent.image || 'assets/images/male.png'" [alt]="parent.name"
+                  <img [src]="parent.image || './assets/images/male.png'" [alt]="parent.name"
                     class="rounded-circle mx-auto border-2 border-primary d-block border mt-3 shadow-sm" width="140"
-                    height="140" onerror="this.src='assets/images/male.png'" style="margin-bottom: -40px; z-index: 2;">
+                    height="140" onerror="this.src='./assets/images/male.png'" style="margin-bottom: -40px; z-index: 2;">
                   <div class="card-body overflow-y">
                     <h5 class="card-title text-danger mt-5 text-decoration-underline fw-bold">{{ parent.name }}</h5>
                     <p class="card-text p-5">
