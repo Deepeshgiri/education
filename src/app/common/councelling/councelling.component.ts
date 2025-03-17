@@ -14,7 +14,7 @@ export class CouncellingComponent implements  AfterViewInit {
 
   ngAfterViewInit(): void {
     const slideElement = this.el.nativeElement.querySelector('.slide');
-    slideElement.classList.add('show'); // Slide in when component loads
+ 
   }
 
 
