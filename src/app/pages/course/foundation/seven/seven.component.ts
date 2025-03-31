@@ -44,7 +44,7 @@ courseHighlights = [
 
 
 eligibilityHighlights = [
-  { icon: "bi-book-half", text: "Complete coverage of CBSE/ICSE Class 8 syllabus", color: "primary" },
+  { icon: "bi-book-half", text: "Complete coverage of CBSE/ICSE Class 7 syllabus", color: "primary" },
   { icon: "bi-lightbulb", text: "Sharpen problem-solving skills for competitive exams", color: "success" },
   { icon: "bi-brain", text: "Develop analytical and critical thinking abilities", color: "danger" },
   { icon: "bi-person-check", text: "Boost confidence in tackling challenging subjects", color: "warning" },

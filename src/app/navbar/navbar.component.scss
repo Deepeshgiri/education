@@ -91,17 +91,15 @@
       box-shadow: 0 2px 12px rgb(78, 5, 5);
 
       border-radius: 15px;
-
-      margin: 0;
-      padding: 10px;
+      
 
       .dropdown-item {
-        padding-left: 10px;
-
+        padding: 0;
 
         &:hover {
           background: #eea412;
-          color: #fff;
+
+
         }
       }
     }
@@ -147,7 +145,7 @@
     top: 0;
     left: 100%;
     margin-left: 0.1rem;
-    display: none;
+    display: block;
 
   }
 
@@ -158,7 +156,7 @@
   }
 }
 
-/* 🖥️ Desktop: Show dropdown on hover */
+/*  Desktop: Show dropdown on hover */
 @media (min-width: 992px) {
   .dropdown:hover>.dropdown-menu {
     display: block;
@@ -218,10 +216,3 @@
   font-size: 1.25rem;
   font-weight: 600;
 }
-
-
-
-
-
-
-
